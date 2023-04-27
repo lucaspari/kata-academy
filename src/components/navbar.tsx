@@ -5,13 +5,11 @@ import { Jolly_Lodger } from "next/font/google";
 import { Poppins } from "next/font/google";
 import { Lato } from "next/font/google";
 import ThemeChanger from "./themechanger";
-interface INavBar {
-  children: React.ReactNode;
-}
+
 const jolly_lodger = Jolly_Lodger({ subsets: ["latin"], weight: "400" });
 const poppins = Poppins({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
-export default function Navbar({ children }: INavBar) {
+export default function Navbar() {
   return (
     <div>
       <nav className="max-w-screen-lg mx-auto flex justify-between items-center mt-4">
