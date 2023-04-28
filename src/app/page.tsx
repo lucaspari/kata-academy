@@ -11,7 +11,7 @@ export default function Home() {
     <main className="max-w-screen-lg mx-auto grid grid-cols-2 mt-8">
       <div className="left justify-between">
         <div className="flex flex-col gap-4 mb-4">
-          <div className={`${inter.className} text-5xl text-justify`}>
+          <div className={`${inter.className} text-5xl`}>
             <TypeAnimation text="Entre no tatame digital e aprimore suas técnicas de karate."></TypeAnimation>
           </div>
           <p className={`${lato.className} text-[#868686] text-xl`}>
