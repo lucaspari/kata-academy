@@ -5,6 +5,7 @@ import { Jolly_Lodger } from "next/font/google";
 import { Poppins } from "next/font/google";
 import { Lato } from "next/font/google";
 import ThemeChanger from "./themechanger";
+import Login from "./login";
 
 const jolly_lodger = Jolly_Lodger({ subsets: ["latin"], weight: "400" });
 const poppins = Poppins({ subsets: ["latin"], weight: "600" });
@@ -30,19 +31,12 @@ export default function Navbar() {
           <li className="flex items-center">
             <ThemeChanger />
           </li>
-          <Link href={"#"}>
-            <li className="flex gap-2">
-              <RiErrorWarningLine className="self-center" />
-              <p>Sobre</p>
-            </li>
-          </Link>
+          <li className="flex  gap-2">
+            <RiErrorWarningLine className="self-center" />
+            <p className="self-center">Sobre</p>
+          </li>
           <li>
-            <Link
-              className="text-white bg-gradient-to-r from-black to-purple-900 rounded-md py-2 px-4"
-              href={"#"}
-            >
-              Entrar
-            </Link>
+            <Login></Login>
           </li>
         </ul>
       </nav>
