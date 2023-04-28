@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html className="dark" suppressHydrationWarning lang="en">
       <body>
         <Providers>
           <Navbar></Navbar>

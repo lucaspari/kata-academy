@@ -11,7 +11,7 @@ export default function Home() {
     <main className="max-w-screen-lg mx-auto grid grid-cols-2 mt-8">
       <div className="left justify-between">
         <div className="flex flex-col gap-4 mb-4">
-          <div className={`${inter.className} text-5xl`}>
+          <div className={`${inter.className} text-5xl min-h-[200px]`}>
             <TypeAnimation text="Entre no tatame digital e aprimore suas técnicas de karate."></TypeAnimation>
           </div>
           <p className={`${lato.className} text-[#868686] text-xl`}>
@@ -19,7 +19,7 @@ export default function Home() {
             tudo isso sem sair de casa.
           </p>
         </div>
-        <button className=" rounded-md border border-solid border-black py-2 px-4 text-sm">
+        <button className="rounded-md border border-solid border-black py-2 px-4 text-sm dark:border-white">
           Aprenda Mais
         </button>
       </div>
