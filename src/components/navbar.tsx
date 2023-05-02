@@ -33,14 +33,14 @@ export default function Navbar() {
           </li>
           <li className="flex  gap-2">
             <RiErrorWarningLine className="self-center" />
-            <p className="self-center">Sobre</p>
+            <p className="self-center text-base">Sobre</p>
           </li>
           <li>
             <Login></Login>
           </li>
         </ul>
       </nav>
-      <div className="bar mt-4"></div>
+      <div className="bar mt-4 dark:bg-[#030713]"></div>
     </div>
   );
 }

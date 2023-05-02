@@ -12,7 +12,7 @@ export default function Login() {
   return (
     <button
       onClick={() => signIn()}
-      className="text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-md py-2 px-3"
+      className="text-base text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-md py-2 px-3"
     >
       Entrar
     </button>
