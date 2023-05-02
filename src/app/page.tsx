@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Home() {
   return (
-    <main className="max-w-screen-lg h-screen mx-auto flex">
+    <main className="max-w-screen-lg mx-auto flex">
       <div className="my-2 flex items-center  w-auto lg:flex lg:flex-col">
         <div className="flex flex-col gap-4">
           <div
