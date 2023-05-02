@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Home() {
   return (
-    <main className="max-w-screen-lg  mx-auto flex">
-      <div className="flex items-center w-full lg:h-1/2 lg:w-1/2 lg:flex lg:flex-col lg:justify-center">
-        <div className="flex flex-col gap-4 mb-4 m-[70px]">
+    <main className="max-w-screen-lg h-screen mx-auto flex">
+      <div className="my-2 flex items-center  w-auto lg:flex lg:flex-col">
+        <div className="flex flex-col gap-4">
           <div
             className={`${inter.className} text-[5.2em] w-[596px] leading-[62.93px] `}
           >
@@ -32,7 +32,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="w-1/2 h-auto hidden lg:block">
+      <div className="h-auto hidden lg:block">
         <Image
           className="absolute left-[55%] z-10"
           src={Karate_girl_middle}

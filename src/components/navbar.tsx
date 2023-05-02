@@ -13,7 +13,7 @@ const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Navbar() {
   return (
     <div>
-      <nav className="max-w-screen-lg mx-auto flex justify-between items-center mt-4">
+      <nav className="max-w-screen-lg  mx-auto flex justify-between items-center mt-4">
         <div>
           <div className={jolly_lodger.className}>
             <div className="tracking-[0.09em] text-[58px] leading-[50px]">
