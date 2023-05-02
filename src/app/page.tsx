@@ -33,12 +33,12 @@ export default function Home() {
         ></Image>
         <Image
           src={Karate_man_left}
-          className="absolute left-[40%] bottom-[20%] opacity-[25%]"
+          className="absolute left-[40%] bottom-[25%] opacity-[25%]"
           alt="karate_man_left"
         ></Image>
         <Image
           src={Karate_girl_right}
-          className="absolute bottom-[20%] left-[55%] opacity-[25%]"
+          className="absolute bottom-[25%] left-[55%] opacity-[25%]"
           alt="karate_girl_right"
         ></Image>
       </div>
