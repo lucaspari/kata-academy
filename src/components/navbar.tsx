@@ -21,19 +21,19 @@ export default function Navbar() {
               <span className=" text-[#FF2F2F]">ta</span>
             </div>
             <div className={poppins.className}>
-              <span className="tracking-[0.12em] leading-[24px] text-base">
+              <span className="tracking-[0.12em] leading-[24px] text-[1.6em]">
                 academy
               </span>
             </div>
           </div>
         </div>
-        <ul className={`${lato.className} text-[1.6em] flex gap-16`}>
+        <ul className={`${lato.className} flex gap-16`}>
           <li className="flex items-center">
             <ThemeChanger />
           </li>
           <li className="flex  gap-2">
-            <RiErrorWarningLine className="self-center" />
-            <p className="self-center text-base">Sobre</p>
+            <RiErrorWarningLine size={20} className="self-center" />
+            <p className="self-center text-[1.6em] ">Sobre</p>
           </li>
           <li>
             <Login></Login>

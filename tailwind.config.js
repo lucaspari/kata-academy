@@ -6,5 +6,9 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
-  plugins: [],
+  theme: {
+    fontSize: {
+      base: ["1em", "15px"],
+    },
+  },
 };

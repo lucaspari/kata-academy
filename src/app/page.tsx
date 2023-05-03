@@ -14,7 +14,7 @@ export default function Home() {
       <div className="my-2 flex items-center  w-auto lg:flex lg:flex-col">
         <div className="flex flex-col gap-4">
           <div
-            className={`${inter.className} text-[5.2em] w-[596px] leading-[62.93px] `}
+            className={`${inter.className} text-[5.2em] lg:w-[596px] lg:h-[190px] leading-[62.93px]`}
           >
             <TypeAnimation
               text="Entre no <span class='text-[#FF2F2F]'>tatame</span> digital e
@@ -22,12 +22,12 @@ export default function Home() {
             />
           </div>
           <p
-            className={`${lato.className} text-[#868686] w-[514px] leading-[30px] text-[25px] text-xl`}
+            className={`${lato.className} text-[#868686] lg:w-[514px] leading-[30px] text-[2em]`}
           >
-            Aqui, você poderá práticar de forma prática, segura e conveniente,
-            tudo isso sem sair de casa.
+            Aqui, você poderá praticar de forma segura e conveniente, tudo isso
+            sem sair de casa.
           </p>
-          <button className="text-[23px] rounded-md border border-solid w-[208px] h-[60px] border-black py-2 px-4 text-sm dark:border-white">
+          <button className="text-[2em] rounded-md border border-solid w-[208px] h-[60px] border-black py-2 px-4 text-sm dark:border-white">
             Aprenda Mais
           </button>
         </div>
