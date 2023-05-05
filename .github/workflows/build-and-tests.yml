@@ -3,9 +3,12 @@ on:
   push:
     branches:
       - main
+      - develop
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

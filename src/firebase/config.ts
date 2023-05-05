@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyAguCcXkSOKAhgu1FltoV8Tz55_CSanoyI",
+  apiKey: process.env.NEXT_PUBLIC_APIKEY,
   authDomain: "kata-acad.firebaseapp.com",
   projectId: "kata-acad",
   storageBucket: "kata-acad.appspot.com",

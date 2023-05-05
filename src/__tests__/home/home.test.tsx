@@ -18,5 +18,4 @@ describe("Home.tsx",() =>{
         fireEvent.click(screen.getByRole('button', { name: /Aprenda Mais/i }));
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
-    afterAll(() => setTimeout(() => process.exit(), 1000))   
 })
