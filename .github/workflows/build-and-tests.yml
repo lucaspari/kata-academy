@@ -13,6 +13,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: log API KEY
+        env:
+          NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
+        run:
+          echo "NEXT_PUBLIC_APIKEY=${NEXT_PUBLIC_APIKEY}"
       - name: Set up environment variables
         env:
           NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
