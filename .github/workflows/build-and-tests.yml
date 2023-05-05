@@ -18,6 +18,6 @@ jobs:
       - name: Build Next.js app
         run: npm run build
       - name: Run tests with Jest and react-testing-library
-        run: npm test
+        run: npm run test
 
   
