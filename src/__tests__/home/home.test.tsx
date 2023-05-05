@@ -3,7 +3,7 @@ import "@testing-library/jest-dom"
 import {fireEvent, render,screen,waitFor} from '@testing-library/react'
 
 describe("Home.tsx",() =>{
-    it("test_render_home_without_errors", () => {
+    it("renders home", () => {
         render(<Home />);
         expect(screen.getByRole('main')).toBeInTheDocument();
     });
