@@ -13,6 +13,23 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Log environment variables
+        env:
+          NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
+          NEXT_PUBLIC_AUTHDOMAIN: ${{ secrets.NEXT_PUBLIC_AUTHDOMAIN }}
+          NEXT_PUBLIC_APPID: ${{ secrets.NEXT_PUBLIC_APPID }}
+          NEXT_PUBLIC_MEASUREMENTID: ${{ secrets.NEXT_PUBLIC_MEASUREMENTID }}
+          NEXT_PUBLIC_MESSAGINGSENDERID: ${{ secrets.NEXT_PUBLIC_MESSAGINGSENDERID }}
+          NEXT_PUBLIC_PROJECTID: ${{ secrets.NEXT_PUBLIC_PROJECTID }}
+          NEXT_PUBLIC_STORAGEBUCKET: ${{ secrets.NEXT_PUBLIC_STORAGEBUCKET }}
+        run: |
+          echo "NEXT_PUBLIC_APIKEY=$NEXT_PUBLIC_APIKEY"
+          echo "NEXT_PUBLIC_AUTHDOMAIN=$NEXT_PUBLIC_AUTHDOMAIN"
+          echo "NEXT_PUBLIC_APPID=$NEXT_PUBLIC_APPID"
+          echo "NEXT_PUBLIC_MEASUREMENTID=$NEXT_PUBLIC_MEASUREMENTID"
+          echo "NEXT_PUBLIC_MESSAGINGSENDERID=$NEXT_PUBLIC_MESSAGINGSENDERID"
+          echo "NEXT_PUBLIC_PROJECTID=$NEXT_PUBLIC_PROJECTID"
+          echo "NEXT_PUBLIC_STORAGEBUCKET=$NEXT_PUBLIC_STORAGEBUCKET"
       - name: Set up environment variables
         env:
           NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
