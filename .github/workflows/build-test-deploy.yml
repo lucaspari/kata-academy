@@ -1,0 +1,43 @@
+name: Build and Test
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_APIKEY: ${{ secrets.NEXT_PUBLIC_APIKEY }}
+      NEXT_PUBLIC_AUTHDOMAIN: ${{ secrets.NEXT_PUBLIC_AUTHDOMAIN }}
+      NEXT_PUBLIC_PROJECTID: ${{ secrets.NEXT_PUBLIC_PROJECTID }}
+      NEXT_PUBLIC_STORAGEBUCKET: ${{ secrets.NEXT_PUBLIC_STORAGEBUCKET }}
+      NEXT_PUBLIC_MESSAGINGSENDERID: ${{ secrets.NEXT_PUBLIC_MESSAGINGSENDERID }}
+      NEXT_PUBLIC_APPID: ${{ secrets.NEXT_PUBLIC_APPID }}
+      NEXT_PUBLIC_MEASUREMENTID: ${{ secrets.NEXT_PUBLIC_MEASUREMENTID }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Next.js app
+        run: npm run build
+      - name: Run tests with Jest and react-testing-library
+        run: npm run test
+      - name: "Deploy to Vercel"
+        run: |
+          prodRun=""
+          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
+            prodRun="--prod"
+          fi
+
+          npx vercel --token ${VERCEL_TOKEN} $prodRun          
+        env:
+          VERCEL_TOKEN: ${{ secrets.NEXT_VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.NEXT_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.NEXT_ORG_ID }}
+
+  
