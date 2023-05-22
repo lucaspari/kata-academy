@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark {
+  background-color: #030713;
+}
 html {
   font-size: 62.5%;
   padding: 0;

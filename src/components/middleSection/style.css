@@ -1,0 +1,11 @@
+.gradient-green {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 97, 72, 0.3) 0%,
+    rgba(6, 19, 3, 0.3) 100%
+  );
+  border: 1.2px solid rgba(215, 215, 215, 0.3);
+}
+.normal {
+  border: 1.2px solid rgba(215, 215, 215, 0.3);
+}

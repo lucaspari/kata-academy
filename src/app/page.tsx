@@ -5,50 +5,50 @@ import Karate_girl_right from "@/public/karate-right.png";
 import Karate_girl_middle from "@/public/karate-middle.png";
 import { Inter } from "next/font/google";
 import { Lato } from "next/font/google";
-import TypeAnimation from "@/components/typeAnimation";
+import { Middle } from "@/components/middleSection/middle";
 const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Home() {
   return (
-    <main className="max-w-screen-lg mx-auto flex">
-      <div className="my-2 flex items-center  w-auto lg:flex lg:flex-col">
-        <div className="flex flex-col gap-4">
-          <div
-            className={`${inter.className} text-[5.2em] lg:w-[596px] lg:h-[190px] leading-[62.93px]`}
-          >
-            <TypeAnimation
-              text="Entre no <span class='text-[#FF2F2F]'>tatame</span> digital e
-            aprimore as suas técnicas de karate."
-            />
+    <main className="max-w-screen-lg mx-auto">
+      <div className="flex justify-center  lg:justify-between h-screen">
+        <div className="flex flex-col gap-4 w-1/2 z-10 my-10">
+          <div className={`${inter.className} text-[4.5em]`}>
+            <p>
+              Entre no <span className="text-[#FF2F2F]">tatame</span> digital
+            </p>
+            <p>e aprimore as suas</p>
+            <p>técnicas de karate.</p>
           </div>
-          <p
+          <div
             className={`${lato.className} text-[#868686] lg:w-[514px] leading-[30px] text-[2em]`}
           >
-            Aqui, você poderá praticar de forma segura e conveniente, tudo isso
-            sem sair de casa.
-          </p>
+            <p>Aqui, você poderá praticar de forma segura e</p>
+            <p>conveniente, tudo isso sem sair de casa.</p>
+          </div>
           <button className="text-[2em] rounded-md border border-solid w-[208px] h-[60px] border-black py-2 px-4 text-sm dark:border-white">
             Aprenda Mais
           </button>
         </div>
+        <div className="hidden lg:block">
+          <Image
+            className="absolute left-[55%] z-10"
+            src={Karate_girl_middle}
+            alt="karate_girl_middle"
+          ></Image>
+          <Image
+            src={Karate_man_left}
+            className="absolute left-[40%] bottom-[25%] opacity-[25%]"
+            alt="karate_man_left"
+          ></Image>
+          <Image
+            src={Karate_girl_right}
+            className="absolute bottom-[25%] left-[55%] opacity-[25%]"
+            alt="karate_girl_right"
+          ></Image>
+        </div>
       </div>
-      <div className="h-auto hidden lg:block">
-        <Image
-          className="absolute left-[55%] z-10"
-          src={Karate_girl_middle}
-          alt="karate_girl_middle"
-        ></Image>
-        <Image
-          src={Karate_man_left}
-          className="absolute left-[40%] bottom-[25%] opacity-[25%]"
-          alt="karate_man_left"
-        ></Image>
-        <Image
-          src={Karate_girl_right}
-          className="absolute bottom-[25%] left-[55%] opacity-[25%]"
-          alt="karate_girl_right"
-        ></Image>
-      </div>
+      <Middle />
     </main>
   );
 }
