@@ -6,6 +6,9 @@
   );
   border: 1.2px solid rgba(215, 215, 215, 0.3);
 }
-.normal {
+.dark .normal {
   border: 1.2px solid rgba(215, 215, 215, 0.3);
+}
+.normal {
+  border: 1px solid #000;
 }
