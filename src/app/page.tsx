@@ -6,8 +6,10 @@ import Karate_girl_middle from "@/public/karate-middle.png";
 import { Inter } from "next/font/google";
 import { Lato } from "next/font/google";
 import { Middle } from "@/components/middleSection/middle";
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
+
 export default function Home() {
   return (
     <main className="max-w-screen-lg mx-auto">
@@ -26,9 +28,12 @@ export default function Home() {
             <p>Aqui, você poderá praticar de forma segura e</p>
             <p>conveniente, tudo isso sem sair de casa.</p>
           </div>
-          <button className="text-[2em] rounded-md border border-solid w-[208px] h-[60px] border-black py-2 px-4 text-sm dark:border-white">
+          <Link
+            href={"/golpe"}
+            className="text-[2em] rounded-md border border-solid w-1/3 h-20 text-center border-black py-2 px-4 text-sm dark:border-white"
+          >
             Aprenda Mais
-          </button>
+          </Link>
         </div>
         <div className="hidden lg:block">
           <Image

@@ -39,7 +39,7 @@ export const Middle = () => {
     <section className={inter.className + " h-[800px]"}>
       <div>
         <p className="text-[40px] dark:text-white mb-10 font-semibold">
-          Aperfeicoe suas técnicas
+          Aperfeiçoe suas técnicas
         </p>
         <div className="dark:text-[#EBEBEB] opacity-70 font-light text-[15px]">
           <p>É possível aprender como executar cada técnica</p>
