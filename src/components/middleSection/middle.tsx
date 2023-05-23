@@ -36,7 +36,7 @@ export const Middle = () => {
     setIframeSrc(kataIndex[0]);
   };
   return (
-    <section className={inter.className + " h-[800px]"}>
+    <section className={inter.className + " h-[800px] max-w-screen-lg mx-auto"}>
       <div>
         <p className="text-[40px] dark:text-white mb-10 font-semibold">
           Aperfeiçoe suas técnicas

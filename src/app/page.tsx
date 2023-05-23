@@ -7,13 +7,14 @@ import { Inter } from "next/font/google";
 import { Lato } from "next/font/google";
 import { Middle } from "@/components/middleSection/middle";
 import Link from "next/link";
+import Commentaries from "@/components/commentaries/commentaries";
 const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   return (
-    <main className="max-w-screen-lg mx-auto">
-      <div className="flex justify-center  lg:justify-between h-screen">
+    <main>
+      <div className="flex justify-center max-w-screen-lg mx-auto  lg:justify-between h-screen">
         <div className="flex flex-col gap-4 w-1/2 z-10 my-10">
           <div className={`${inter.className} text-[4.5em]`}>
             <p>
@@ -53,6 +54,7 @@ export default function Home() {
           ></Image>
         </div>
       </div>
+      <Commentaries />
       <Middle />
     </main>
   );
