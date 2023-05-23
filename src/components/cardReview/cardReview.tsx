@@ -9,7 +9,7 @@ interface ICardReview {
 }
 export default function CardReview(props: ICardReview) {
   return (
-    <div className=" rounded-md  px-10 py-10 gradient-card">
+    <div className=" rounded-md  px-10 py-10 gradient-card mx-4 lg:mg-0">
       <div className="flex gap-4">
         <Image width={50} src={props.src} alt={props.alt}></Image>
         <div>

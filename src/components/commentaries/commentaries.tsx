@@ -7,18 +7,18 @@ export default function Commentaries() {
     <section className="dark:bg-black h-[900px]">
       <div className="max-w-screen-lg mx-auto">
         <div>
-          <div className="text-[40px] font-semibold">
+          <div className="text-[40px] font-semibold lg:text-left text-center">
             <p>Avaliações de integrantes</p>
             <p>da plataforma</p>
           </div>
           <div>
-            <p className="opacity-70 text-[15px]">
+            <p className="opacity-70 text-[15px] lg:text-left text-center">
               Venha participar também,dessa comunidade
             </p>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-10 mt-20">
-          <div className="row-start-1 row-end-4">
+          <div className="lg:row-start-1 lg:row-end-4 lg:col-start-1 lg:col-end-1 col-start-1 col-end-4">
             <CardReview
               name="Eddard Stark"
               alt="Eddard Stark"
@@ -27,7 +27,7 @@ export default function Commentaries() {
               memberSince="Aluno há 7 meses"
             ></CardReview>
           </div>
-          <div className="row-start-1 row-end-4">
+          <div className="lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-2 col-start-1 col-end-4">
             <CardReview
               name="Eddard Stark"
               alt="Eddard Stark"
@@ -36,7 +36,7 @@ export default function Commentaries() {
               memberSince="Aluno há 7 meses"
             ></CardReview>
           </div>
-          <div className="row-start-1 row-end-4">
+          <div className="lg:row-start-1 lg:row-end-4 lg:col-start-3 lg:col-end-4 col-start-1 col-end-4">
             <CardReview
               name="Eddard Stark"
               alt="Eddard Stark"
