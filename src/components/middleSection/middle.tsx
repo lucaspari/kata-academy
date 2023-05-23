@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 import KarateMini from "@/public/miniKarate.svg";
 import { BiTimeFive } from "react-icons/bi";
-import { AiOutlineLike } from "react-icons/ai";
 import "./style.css";
 const inter = Inter({ subsets: ["latin"], weight: ["600", "300"] });
 export const Middle = () => {
@@ -36,17 +35,21 @@ export const Middle = () => {
     setIframeSrc(kataIndex[0]);
   };
   return (
-    <section className={inter.className + " h-[800px] max-w-screen-lg mx-auto"}>
+    <section
+      className={
+        inter.className + " h-[800px] mx-2 lg:max-w-screen-lg lg:mx-auto"
+      }
+    >
       <div>
-        <p className="text-[40px] dark:text-white mb-10 font-semibold">
+        <p className="text-[4em] text-center lg:text-left dark:text-white mb-10 font-semibold">
           Aperfeiçoe suas técnicas
         </p>
-        <div className="dark:text-[#EBEBEB] opacity-70 font-light text-[15px]">
+        <div className="text-center lg:text-left dark:text-[#EBEBEB] opacity-70 font-light text-[15px]">
           <p>É possível aprender como executar cada técnica</p>
           <p>vista da sua aula, na sua casa.</p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-4 justify-center md:grid md:grid-cols-2 md:place-items-center">
+      <div className="flex flex-wrap gap-4 mt-2 justify-center md:grid md:grid-cols-2 md:place-items-center">
         <div className="left rounded-md w-[500px] h-[300px]">
           <iframe
             height={"100%"}
