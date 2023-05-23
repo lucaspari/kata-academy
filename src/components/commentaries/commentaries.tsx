@@ -4,7 +4,7 @@ import Geraldo from "@/public/geraldo.svg";
 import Jane from "@/public/jane.svg";
 export default function Commentaries() {
   return (
-    <section className="dark:bg-black h-[900px]">
+    <section className="dark:bg-black py-40 h-[1100px]">
       <div className="max-w-screen-lg mx-auto">
         <div>
           <div className="text-[40px] font-semibold lg:text-left text-center">

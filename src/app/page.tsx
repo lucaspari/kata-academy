@@ -31,9 +31,9 @@ export default function Home() {
           </div>
           <Link
             href={"/golpe"}
-            className="text-[2em] rounded-md border border-solid w-1/3 h-20 text-center border-black py-2 px-4 text-sm dark:border-white"
+            className="border border-solid border-black dark:border-white text-[16px] lg:w-1/3 h-20 lg:text-[2em] flex justify-center items-center"
           >
-            Aprenda Mais
+            <span className="text-center">Aprenda Mais</span>
           </Link>
         </div>
         <div className="hidden lg:block">
