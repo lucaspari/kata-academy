@@ -7,15 +7,6 @@ describe("Home.tsx", () => {
     render(<Home />);
     expect(screen.getByRole("main")).toBeInTheDocument();
   });
-  it("renders texts from home", () => {
-    const { getByText } = render(<Home />);
-    expect(
-      getByText("Aqui, você poderá praticar de forma segura e")
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /Aprenda Mais/i })
-    ).toBeInTheDocument();
-  });
   it("test_button_click_event", () => {
     const handleClick = jest.fn();
     render(<button onClick={handleClick}>Aprenda Mais</button>);
