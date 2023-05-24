@@ -1,4 +1,3 @@
-// import Head from "next/head";
 import Image from "next/image";
 import Karate_man_left from "@/public/karate-left.png";
 import Karate_girl_right from "@/public/karate-right.png";

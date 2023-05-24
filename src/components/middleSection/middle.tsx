@@ -37,7 +37,7 @@ export const Middle = () => {
   return (
     <section
       className={
-        inter.className + " h-[800px] mx-2 lg:max-w-screen-lg lg:mx-auto"
+        inter.className + " h-[800px] mx-2 py-40 lg:max-w-screen-lg lg:mx-auto"
       }
     >
       <div>

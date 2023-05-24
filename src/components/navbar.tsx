@@ -12,7 +12,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Navbar() {
   return (
-    <div>
+    <div className="borderBottom">
       <nav className="max-w-screen-lg  mx-auto flex justify-between items-center mt-4">
         <div>
           <div className={jolly_lodger.className}>

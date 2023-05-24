@@ -16,3 +16,11 @@ html {
 .bar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.19);
 }
+@layer components {
+  .borderRight {
+    border-right: 1px solid rgba(179, 178, 178, 0.19);
+  }
+  .borderBottom {
+    border-bottom: 1px solid rgba(179, 178, 178, 0.19);
+  }
+}
