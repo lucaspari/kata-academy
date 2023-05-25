@@ -7,6 +7,7 @@ import { Lato } from "next/font/google";
 import { Middle } from "@/components/middleSection/middle";
 import Link from "next/link";
 import Commentaries from "@/components/commentaries/commentaries";
+import { FaRedRiver } from "react-icons/fa";
 const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
