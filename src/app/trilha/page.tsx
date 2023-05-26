@@ -1,11 +1,11 @@
 import React from "react";
 import SideBar from "@/components/sideBar/sideBar";
 
-export default function Golpe() {
+export default function Trilha() {
   return (
     <div>
       <SideBar />
-      <h1>Golpe</h1>
+      <h1>Trilha</h1>
     </div>
   );
 }

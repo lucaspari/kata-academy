@@ -9,6 +9,7 @@ import {
 import { CiMedal, CiMap } from "react-icons/ci";
 import { GiPunch } from "react-icons/gi";
 import { GoGear } from "react-icons/go";
+import Link from "next/link";
 const lato = Lato({ subsets: ["latin"], weight: ["300", "400", "700"] });
 export default function SideBar() {
   return (
@@ -20,7 +21,11 @@ export default function SideBar() {
         <ul className="mx-20 flex flex-col gap-8">
           <li className="flex gap-2">
             <AiOutlineHome className="text-4xl" />
-            <span className="text-3xl">Dashboard</span>
+            <Link
+              href={"/dashboard"}
+            >
+              <span className="text-3xl">Dashboard</span>
+            </Link>
           </li>
           <li className="flex gap-2">
             <AiOutlineSave className="text-4xl" />
@@ -43,7 +48,11 @@ export default function SideBar() {
           </li>
           <li className="flex gap-2">
             <AiOutlineTrophy className="text-4xl" />
-            <span className="text-3xl">Faixas</span>
+            <Link
+              href={"/trilha"}
+            >
+              <span className="text-3xl">Faixas</span>
+            </Link>
           </li>
           <li className="flex gap-2">
             <AiOutlineThunderbolt className="text-4xl" />
@@ -51,7 +60,11 @@ export default function SideBar() {
           </li>
           <li className="flex gap-2">
             <GiPunch className="text-4xl" />
-            <span className="text-3xl">Golpes</span>
+            <Link
+              href={"/golpe"}
+            >
+              <span className="text-3xl">Golpes</span>
+            </Link>
           </li>
         </ul>
       </nav>
