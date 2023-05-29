@@ -5,13 +5,17 @@ import { User, UserContext } from "@/context/userContext";
 import { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import Toast from "@/components/toastMessage/toast";
+import useGoogleAuth from "./useGoogleAuth/useGoogleAuth";
 export default function Login() {
   const [showToast, setShowToast] = useState(false);
+  const isLoggedIn = useGoogleAuth();
   const userContext = useContext(UserContext);
   const router = useRouter();
   if (!userContext) {
     throw new Error("User context is null or undefined");
   }
+  console.log(isLoggedIn);
+
   const signIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
@@ -33,12 +37,14 @@ export default function Login() {
   };
   return (
     <div>
-      <button
-        onClick={() => signIn()}
-        className="text-[1.6em]  text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-md py-2 px-3"
-      >
-        Entrar
-      </button>
+      {!isLoggedIn && (
+        <button
+          onClick={() => signIn()}
+          className="text-[1.6em]  text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-md py-2 px-3"
+        >
+          Entrar
+        </button>
+      )}
       <Toast
         show={showToast}
         setShow={setShowToast}

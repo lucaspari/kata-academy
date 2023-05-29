@@ -16,10 +16,6 @@ export default function Navbar() {
           <li className="flex items-center">
             <ThemeChanger />
           </li>
-          <li className="flex  gap-2">
-            <RiErrorWarningLine size={20} className="self-center" />
-            <p className="self-center text-[1.6em] ">Sobre</p>
-          </li>
           <li>
             <Login></Login>
           </li>

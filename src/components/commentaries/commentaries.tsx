@@ -4,16 +4,16 @@ import Geraldo from "@/public/geraldo.svg";
 import Jane from "@/public/jane.svg";
 export default function Commentaries() {
   return (
-    <section className="dark:bg-black py-40 h-[1100px]">
+    <section className="bg-[#B4EFFF] dark:bg-black py-40 h-[1100px]">
       <div className="max-w-screen-lg mx-auto">
         <div>
-          <div className="text-[40px] font-semibold lg:text-left text-center">
+          <div className="mb-10 text-[40px] font-semibold lg:text-left text-center">
             <p>Avaliações de integrantes</p>
             <p>da plataforma</p>
           </div>
           <div>
             <p className="opacity-70 text-[15px] lg:text-left text-center">
-              Venha participar também,dessa comunidade
+              Venha participar também, dessa comunidade
             </p>
           </div>
         </div>

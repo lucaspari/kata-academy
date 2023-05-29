@@ -21,9 +21,7 @@ export default function SideBar() {
         <ul className="mx-20 flex flex-col gap-8">
           <li className="flex gap-2">
             <AiOutlineHome className="text-4xl" />
-            <Link
-              href={"/dashboard"}
-            >
+            <Link href={"/dashboard"}>
               <span className="text-3xl">Dashboard</span>
             </Link>
           </li>
@@ -48,9 +46,7 @@ export default function SideBar() {
           </li>
           <li className="flex gap-2">
             <AiOutlineTrophy className="text-4xl" />
-            <Link
-              href={"/trilha"}
-            >
+            <Link href={"/trilha"}>
               <span className="text-3xl">Faixas</span>
             </Link>
           </li>
@@ -60,9 +56,7 @@ export default function SideBar() {
           </li>
           <li className="flex gap-2">
             <GiPunch className="text-4xl" />
-            <Link
-              href={"/golpe"}
-            >
+            <Link href={"/golpe"}>
               <span className="text-3xl">Golpes</span>
             </Link>
           </li>
