@@ -14,7 +14,6 @@ export default function Login() {
   if (!userContext) {
     throw new Error("User context is null or undefined");
   }
-  console.log(isLoggedIn);
 
   const signIn = () => {
     const provider = new GoogleAuthProvider();
@@ -25,7 +24,13 @@ export default function Login() {
           email: result.user.email ?? "",
           photoURL: result.user.photoURL ?? "",
         };
+        const expirationTime = new Date().getTime() + 1 * 60 * 1000;
+
         userContext.updateUser(user);
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ ...user, expirationTime })
+        );
         router.push("/dashboard");
       })
       .catch((error) => {

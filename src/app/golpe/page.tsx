@@ -5,7 +5,7 @@ export default function Golpe() {
   return (
     <div>
       <SideBar />
-      <h1>Golpe</h1>
+      <h1>Age Uke</h1>
     </div>
   );
 }

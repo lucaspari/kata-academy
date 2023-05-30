@@ -13,7 +13,7 @@ import Link from "next/link";
 const lato = Lato({ subsets: ["latin"], weight: ["300", "400", "700"] });
 export default function SideBar() {
   return (
-    <div className={"fixed h-screen borderRight " + lato.className}>
+    <div className={"relative h-screen borderRight " + lato.className}>
       <div className="ml-20 text-xl text-b font-normal text-gray-500 uppercase mb-4 mt-8">
         Menu
       </div>
