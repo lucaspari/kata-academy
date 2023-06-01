@@ -9,6 +9,7 @@ const useGoogleAuth = (): boolean => {
       JSON.parse(localStorage.getItem("user") as string) || undefined;
     if (userContext) {
       if (userContext.user || user) {
+        if (user && userContext.user == undefined) userContext.updateUser(user);
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn(false);
