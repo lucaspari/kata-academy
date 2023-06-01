@@ -1,20 +1,28 @@
+"use client";
 import Image from "next/image";
-import Karate_man_left from "@/public/karate-left.png";
-import Karate_girl_right from "@/public/karate-right.png";
-import Karate_girl_middle from "@/public/karate-middle.png";
+import karate_people from "@/public/karate-people.svg";
 import { Inter } from "next/font/google";
 import { Lato } from "next/font/google";
 import { Middle } from "@/components/middleSection/middle";
 import Link from "next/link";
 import Commentaries from "@/components/commentaries/commentaries";
+import useGoogleAuth from "@/components/useGoogleAuth/useGoogleAuth";
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
 const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
+  const isLogged = useGoogleAuth();
+  useEffect(() => {
+    if (isLogged) {
+      redirect("/dashboard");
+    }
+  }, [isLogged]);
   return (
     <main>
       <div className="flex justify-center max-w-screen-lg mx-auto  lg:justify-between h-screen">
-        <div className="flex flex-col gap-4 w-1/2 z-10 my-10">
+        <div className="flex flex-col gap-4  z-10 my-10">
           <div className={`${inter.className} text-[4.5em]`}>
             <p>
               Entre no <span className="text-[#FF2F2F]">tatame</span> digital
@@ -35,21 +43,12 @@ export default function Home() {
             <span className="text-center">Aprenda Mais</span>
           </Link>
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:inline-block">
           <Image
-            className="absolute left-[55%] z-10"
-            src={Karate_girl_middle}
-            alt="karate_girl_middle"
-          ></Image>
-          <Image
-            src={Karate_man_left}
-            className="absolute left-[40%] bottom-[25%] opacity-[25%]"
-            alt="karate_man_left"
-          ></Image>
-          <Image
-            src={Karate_girl_right}
-            className="absolute bottom-[25%] left-[55%] opacity-[25%]"
-            alt="karate_girl_right"
+            width={700}
+            className="absolute right-[20%]"
+            src={karate_people}
+            alt="karate-people"
           ></Image>
         </div>
       </div>

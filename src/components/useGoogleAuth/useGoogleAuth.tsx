@@ -3,9 +3,10 @@ import { UserContext } from "@/context/userContext";
 import { useContext } from "react";
 const useGoogleAuth = (): boolean => {
   const userContext = useContext(UserContext);
-  const user = JSON.parse(localStorage.getItem("user") as string) || undefined;
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   useEffect(() => {
+    const user =
+      JSON.parse(localStorage.getItem("user") as string) || undefined;
     if (userContext) {
       if (userContext.user || user) {
         setIsLoggedIn(true);
@@ -13,7 +14,7 @@ const useGoogleAuth = (): boolean => {
         setIsLoggedIn(false);
       }
     }
-  }, [userContext, user]);
-  return isLoggedIn;
+  }, [userContext]);
+  return isLoggedIn as boolean;
 };
 export default useGoogleAuth;

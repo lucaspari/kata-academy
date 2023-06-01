@@ -1,21 +1,20 @@
-import { Jolly_Lodger } from "next/font/google";
-import { Poppins } from "next/font/google";
-const poppins = Poppins({ subsets: ["latin"], weight: "600" });
-const jolly_lodger = Jolly_Lodger({ subsets: ["latin"], weight: "400" });
+import logo_black from "@/public/logo_black.svg";
+import logo_white from "@/public/logo_white.svg";
+import Image from "next/image";
+
 export default function Logo() {
   return (
     <div>
-      <div className={jolly_lodger.className}>
-        <div className="tracking-[0.09em] text-[58px] leading-[50px]">
-          <span>Ka</span>
-          <span className=" text-[#FF2F2F]">ta</span>
-        </div>
-        <div className={poppins.className}>
-          <span className="tracking-[0.12em] leading-[24px] text-[1.6em]">
-            academy
-          </span>
-        </div>
-      </div>
+      <Image
+        className="hidden dark:inline-block"
+        src={logo_black}
+        alt="logo"
+      ></Image>
+      <Image
+        className="inline-block dark:hidden"
+        src={logo_white}
+        alt="logo"
+      ></Image>
     </div>
   );
 }
