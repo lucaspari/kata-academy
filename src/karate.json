@@ -1,0 +1,12 @@
+{
+  "faixas": [
+    {
+      "id": 1,
+      "nome": "Faixa Branca"
+    },
+    {
+      "id": 2,
+      "nome": "Faixa Amarela"
+    }
+  ]
+}
