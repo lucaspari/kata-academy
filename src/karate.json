@@ -7,6 +7,78 @@
     {
       "id": 2,
       "nome": "Faixa Amarela"
+    },
+    {
+      "id": 3,
+      "nome": "Faixa Vermelha"
+    },
+    {
+      "id": 4,
+      "nome": "Faixa Laranja"
+    }
+  ],
+  "katas": [
+    {
+      "id": 1,
+      "nome": "Heian Shodan",
+      "faixa": 1,
+      "url": "https://www.youtube.com/embed/9D2yOzDsW8k"
+    },
+    {
+      "id": 2,
+      "nome": "Heian Nidan",
+      "faixa": 2,
+      "url": "https://www.youtube.com/embed/6Hc1NMdjU9U"
+    },
+    {
+      "id": 3,
+      "nome": "Heian Sandan",
+      "faixa": 3,
+      "url": "https://www.youtube.com/embed/8OI-FTV3-4o"
+    },
+    {
+      "id": 4,
+      "nome": "Heian Yondan",
+      "faixa": 4,
+      "url": "https://www.youtube.com/embed/HrAiTCcatbY"
+    }
+  ],
+  "golpes": [
+    {
+      "id": 1,
+      "nome": "Oi Zuki",
+      "tempo": "1:35",
+      "descricao": "O Oi Zuki é um golpe direto e poderoso, executado com a mão da frente. Ele envolve um movimento rápido e explosivo, em linha reta em direção ao alvo. O braço é estendido completamente, enquanto o punho está fechado. Durante o soco, o praticante deve manter o corpo bem alinhado e transferir o peso do pé traseiro para o pé da frente, para gerar força adicional.",
+      "url": "https://www.youtube.com/embed/43iXcMfl5aE",
+      "detalhes": "Durante a prática, é fundamental prestar muita atenção ao seu hara (quadril). Certifique-se de mantê-lo em uma posição diagonal, especialmente ao executar esse soco em zenkutsu dachi. Não se esqueça desse aspecto importante.",
+      "faixa": 1
+    },
+    {
+      "id": 2,
+      "nome": "Gedan Barai",
+      "tempo": "15:51",
+      "descricao": "O Gedan Barai é executado com o braço da frente e tem como objetivo bloquear ou desviar ataques baixos direcionados à parte inferior do corpo. Ele envolve um movimento amplo e descendente, começando com o braço elevado acima da cabeça ou do ombro e, em seguida, varrendo para baixo em um arco para interceptar o ataque.\n Durante a execução do Gedan Barai, é importante manter o corpo estável e a postura equilibrada. O braço da frente é estendido para fora em um ângulo descendente, com a palma da mão voltada para baixo. O objetivo é bloquear o ataque ou afastá-lo do caminho, utilizando a força do movimento de varredura descendente.",
+      "url": "https://www.youtube.com/embed/fpY5Yqw9lmk",
+      "detalhes": "Preste muita atenção ao seu hara (quadril) durante a prática. É importante mantê-lo em uma posição diagonal, pois todas as defesas são executadas dessa forma.",
+      "faixa": 1
+    },
+    {
+      "id": 3,
+      "nome": "Age Uke",
+      "tempo": "14:29",
+      "descricao": "O Age Uke é executado com o braço da frente, levantando-o em um movimento ascendente para bloquear ou desviar um ataque vindo de baixo para cima. Esse golpe é usado principalmente para bloquear socos ou chutes baixos que se aproximam da parte inferior do corpo. Durante a execução do Age Uke, o praticante posiciona o braço de defesa em uma posição elevada, com o cotovelo dobrado. A mão está fechada em um punho, com os nós dos dedos voltados para cima. O golpe é realizado com um movimento rápido e explosivo, levantando o antebraço para interceptar o ataque ascendente.",
+      "url": "https://www.youtube.com/embed/a7RD5CSaxh4",
+      "detalhes": "Preste muita atenção ao seu hara (quadril) durante a prática. É importante mantê-lo em uma posição diagonal, pois todas as defesas são executadas dessa forma. Além disso evite o braço em angulo retos, pois isso pode causar lesões.",
+      "faixa": 1
+    },
+    {
+      "id": 4,
+      "nome": "Shuto Uke",
+      "tempo": "20:32",
+      "descricao": "O Shuto Uke é executado com o braço lateral, com a mão posicionada de modo que a borda externa da mão, especificamente o lado do dedo mindinho, seja usada para bloquear ou desviar um ataque lateral. Esse golpe é usado principalmente para bloquear socos ou ataques que são direcionados para o lado do corpo.\n Durante a execução do Shuto Uke, o praticante posiciona o braço de defesa em uma posição elevada, com o cotovelo dobrado. A mão é flexionada para trás, mantendo os dedos estendidos e unidos, enquanto a borda externa da mão é direcionada para o ataque. O golpe é realizado de maneira rápida e decisiva, desviando o ataque para longe do corpo.",
+      "url": "https://www.youtube.com/embed/a7RD5CSaxh4",
+      "detalhes": "Preste muita atenção ao seu hara (quadril) durante a prática. É importante mantê-lo em uma posição diagonal, pois todas as defesas são executadas dessa forma.",
+      "faixa": 1
     }
   ]
 }
