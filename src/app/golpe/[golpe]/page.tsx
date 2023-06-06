@@ -3,6 +3,7 @@ import SideBar from "@/components/sideBar/sideBar";
 import CardVideo from "@/components/cardVideo/cardVideo";
 import path from "path";
 import fsPromises from "fs/promises";
+import Golpe from "@/types/Golpe";
 async function getGolpes() {
   const folder = path.join(process.cwd(), "src", "karate.json");
   const jsonData = await fsPromises.readFile(folder);
@@ -15,15 +16,7 @@ function prepareStringToFind(string: string) {
     string.slice(1).toLowerCase().replace(" ", "-")
   );
 }
-interface Golpe {
-  id: number;
-  nome: string;
-  tempo: string;
-  faixa: number;
-  descricao: string;
-  url: string;
-  detalhes: string;
-}
+
 export default async function Golpe({ params }: any) {
   const golpes = (await getGolpes()) as Golpe[];
   const golpe = golpes.find(
