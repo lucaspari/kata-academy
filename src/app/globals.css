@@ -34,4 +34,7 @@ html {
   .normal {
     border: 1.2px solid rgba(215, 215, 215, 0.3);
   }
+  .half-screen {
+    width: 1200px;
+  }
 }
