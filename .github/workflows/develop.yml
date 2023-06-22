@@ -2,7 +2,7 @@ name: Build and Test
 on:
   push:
     branches:
-      - main
+      - develop
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -25,15 +25,3 @@ jobs:
         run: npm run build
       - name: Run tests with Jest and react-testing-library
         run: npm run test
-      - name: "Deploy to Vercel"
-        run: |
-          prodRun=""
-          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
-            prodRun="--prod"
-          fi
-
-          npx vercel --token ${VERCEL_TOKEN} $prodRun
-        env:
-          VERCEL_TOKEN: ${{ secrets.NEXT_VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
