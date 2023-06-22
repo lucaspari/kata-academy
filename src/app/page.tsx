@@ -6,19 +6,13 @@ import { Lato } from "next/font/google";
 import { Middle } from "@/components/middleSection/middle";
 import Link from "next/link";
 import Commentaries from "@/components/commentaries/commentaries";
-import useGoogleAuth from "@/components/useGoogleAuth/useGoogleAuth";
-import { useEffect } from "react";
-import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
-  const isLogged = useGoogleAuth();
-  useEffect(() => {
-    if (isLogged) {
-      redirect("/dashboard");
-    }
-  }, [isLogged]);
+  const session = useSession();
+
   return (
     <main>
       <div className="flex justify-center max-w-screen-lg mx-auto  lg:justify-between h-screen">

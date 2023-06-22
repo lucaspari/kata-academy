@@ -1,12 +1,9 @@
 "use client";
 import SideBar from "@/components/sideBar/sideBar";
-import { User, UserContext } from "@/context/userContext";
-import { useContext, useEffect } from "react";
-import { redirect } from "next/navigation";
-import useGoogleAuth from "@/components/useGoogleAuth/useGoogleAuth";
+import { useSession } from "next-auth/react";
 export default function Dashboard() {
-  const isLogged = useGoogleAuth();
-  return isLogged ? (
+  const session = useSession();
+  return session ? (
     <div
       className="flex
     "

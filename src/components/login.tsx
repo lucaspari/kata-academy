@@ -1,61 +1,24 @@
 "use client";
-import { auth } from "@/firebase/config";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { User, UserContext } from "@/context/userContext";
-import { useContext, useState } from "react";
-import { useRouter } from "next/navigation";
-import Toast from "@/components/toastMessage/toast";
-import useGoogleAuth from "./useGoogleAuth/useGoogleAuth";
+import { signIn, signOut, useSession } from "next-auth/react";
 export default function Login() {
-  const [showToast, setShowToast] = useState(false);
-  const isLoggedIn = useGoogleAuth();
-  const userContext = useContext(UserContext);
-  const router = useRouter();
-  if (!userContext) {
-    throw new Error("User context is null or undefined");
-  }
-
-  const signIn = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user: User = {
-          displayName: result.user.displayName ?? "",
-          email: result.user.email ?? "",
-          photoURL: result.user.photoURL ?? "",
-        };
-        const expirationTime = new Date().getTime() + 1 * 60 * 1000;
-
-        userContext.updateUser(user);
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ ...user, expirationTime })
-        );
-        router.push("/dashboard");
-      })
-      .catch((error) => {
-        {
-          console.log(error);
-          setShowToast(true);
-        }
-      });
-  };
+  const session = useSession();
   return (
     <div>
-      {!isLoggedIn && (
+      {!session.data ? (
         <button
-          onClick={() => signIn()}
+          onClick={() => signIn("google")}
           className="text-[1.6em]  text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-md py-2 px-3"
         >
           Entrar
         </button>
+      ) : (
+        <button
+          onClick={() => signOut()}
+          className="text-[1.6em]  text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-md py-2 px-3"
+        >
+          Sair
+        </button>
       )}
-      <Toast
-        show={showToast}
-        setShow={setShowToast}
-        message="Please Log-in"
-        status="warning"
-      ></Toast>
     </div>
   );
 }
