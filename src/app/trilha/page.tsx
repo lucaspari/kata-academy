@@ -4,17 +4,13 @@ import Golpe from "@/types/Golpe";
 import path from "path";
 import fsPromises from "fs/promises";
 import CardVideo from "@/components/cardVideo/cardVideo";
-interface TrilhaProps {
-  faixa: string;
-  golpes: Golpe[];
-}
 // async function getFaixa() {
 //   const folder = path.join(process.cwd(), "src", "karate.json");
 //   const jsonData = await fsPromises.readFile(folder);
 //   const objectData = JSON.parse(jsonData.toString()) as any;
 //   return objectData.faixas;
 // }
-export default async function Trilha(props: TrilhaProps) {
+export default async function Trilha() {
   return (
     <div className="flex">
       <SideBar />
@@ -25,7 +21,7 @@ export default async function Trilha(props: TrilhaProps) {
             className="text-[1.56em] text-[#868686]
 "
           >
-            Guia para quem está na {props.faixa}Faixa Branca
+            Guia para quem está na Faixa Branca
           </span>
         </div>
         <div className="kihon">
