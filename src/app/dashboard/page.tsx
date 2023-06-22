@@ -9,11 +9,10 @@ export default function Dashboard() {
     "
     >
       <SideBar />
-      <main className="flex-grow max-w-screen-lg">
+      <main className="half-screen mt-8">
         <h1 className="text-5xl mb-10">Dashboard</h1>
-        <p>Logado</p>
-        {/* <p className="text-4xl">User: {userLogged.displayName}</p>
-        <p className="text-4xl">Email: {userLogged.email}</p> */}
+        <p className="text-4xl">User: {session?.data?.user?.name}</p>
+        <p className="text-4xl">Email: {session?.data?.user?.email}</p>
       </main>
     </div>
   ) : (

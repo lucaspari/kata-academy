@@ -1,8 +1,8 @@
 import Home from "@/app/page";
 import "@testing-library/jest-dom";
-
+import { render } from "@testing-library/react";
 describe("Home.tsx", () => {
-  it("1 + 1 should be 2", () => {
-    expect(1 + 1).toBe(2);
+  it("home exists?", () => {
+    render(<Home />);
   });
 });

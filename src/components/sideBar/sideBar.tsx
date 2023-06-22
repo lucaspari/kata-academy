@@ -10,7 +10,6 @@ import { CiMedal, CiMap } from "react-icons/ci";
 import { GiPunch } from "react-icons/gi";
 import { GoGear } from "react-icons/go";
 import Link from "next/link";
-import { Logout } from "../logoutButton/logout";
 const lato = Lato({ subsets: ["latin"], weight: ["300", "400", "700"] });
 export default function SideBar() {
   return (
@@ -75,9 +74,6 @@ export default function SideBar() {
           <li className="flex gap-2">
             <AiOutlineQuestionCircle className="text-4xl" />
             <span className="text-3xl">Ajuda</span>
-          </li>
-          <li>
-            <Logout />
           </li>
         </ul>
       </nav>

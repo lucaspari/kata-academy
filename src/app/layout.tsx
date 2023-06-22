@@ -2,9 +2,7 @@ import { getServerSession } from "next-auth";
 import "./globals.css";
 import { authOptions } from "../../pages/api/auth/[...nextauth]";
 import Navbar from "@/components/navbar";
-import Home from "@/app/page";
 import SessionProvider from "./SessionProvider";
-import Dashboard from "./dashboard/page";
 import { Providers } from "./providers";
 export const metadata = {
   title: "Kata Academy",
@@ -24,7 +22,7 @@ export default async function RootLayout({
         <SessionProvider session={session}>
           <Providers>
             <Navbar></Navbar>
-            {!session ? <Home></Home> : <Dashboard />}
+            {children}
           </Providers>
         </SessionProvider>
       </body>
