@@ -8,13 +8,13 @@ interface TrilhaProps {
   faixa: string;
   golpes: Golpe[];
 }
-async function getFaixa() {
-  const folder = path.join(process.cwd(), "src", "karate.json");
-  const jsonData = await fsPromises.readFile(folder);
-  const objectData = JSON.parse(jsonData.toString()) as any;
-  return objectData.faixas;
-}
-export default function Trilha(props: TrilhaProps) {
+// async function getFaixa() {
+//   const folder = path.join(process.cwd(), "src", "karate.json");
+//   const jsonData = await fsPromises.readFile(folder);
+//   const objectData = JSON.parse(jsonData.toString()) as any;
+//   return objectData.faixas;
+// }
+export default async function Trilha(props: TrilhaProps) {
   return (
     <div className="flex">
       <SideBar />
