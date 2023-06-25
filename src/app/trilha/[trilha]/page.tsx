@@ -1,16 +1,16 @@
 import React from "react";
 import SideBar from "@/components/sideBar/sideBar";
-import Golpe from "@/types/Golpe";
-import path from "path";
-import fsPromises from "fs/promises";
 import CardVideo from "@/components/cardVideo/cardVideo";
-// async function getFaixa() {
-//   const folder = path.join(process.cwd(), "src", "karate.json");
-//   const jsonData = await fsPromises.readFile(folder);
-//   const objectData = JSON.parse(jsonData.toString()) as any;
-//   return objectData.faixas;
-// }
-export default async function Trilha() {
+import Faixa from "@/types/Faixa";
+async function getFaixa(faixa: string) {
+  const response = await fetch(
+    `http://localhost:3000/faixas/findByFaixa/${faixa}`
+  );
+  const faixas = await response.json();
+  return faixas;
+}
+export default async function Trilha({ params }: any) {
+  const faixa = (await getFaixa(params.trilha)) as Faixa;
   return (
     <div className="flex">
       <SideBar />
@@ -21,7 +21,7 @@ export default async function Trilha() {
             className="text-[1.56em] text-[#868686]
 "
           >
-            Guia para quem está na Faixa Branca
+            Guia para quem está na {faixa.nome}
           </span>
         </div>
         <div className="kihon">
