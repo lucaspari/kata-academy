@@ -2,6 +2,7 @@ import React from "react";
 import SideBar from "@/components/sideBar/sideBar";
 import CardVideo from "@/components/cardVideo/cardVideo";
 import Faixa from "@/types/Faixa";
+import Golpe from "@/types/Golpe";
 async function getFaixa(faixa: string) {
   const response = await fetch(
     `http://localhost:3000/faixas/findByFaixa/${faixa}`
@@ -9,8 +10,16 @@ async function getFaixa(faixa: string) {
   const faixas = await response.json();
   return faixas;
 }
+async function getGolpes(faixa: string) {
+  const response = await fetch(
+    `http://localhost:3000/golpes/findGolpesByFaixa/${faixa}`
+  );
+  const golpes = await response.json();
+  return golpes;
+}
 export default async function Trilha({ params }: any) {
   const faixa = (await getFaixa(params.trilha)) as Faixa;
+  const golpes = (await getGolpes(faixa._id)) as Golpe[];
   return (
     <div className="flex">
       <SideBar />
@@ -27,60 +36,17 @@ export default async function Trilha({ params }: any) {
         <div className="kihon">
           <h2 className="text-[2.25em] mb-[1em]">Golpes exigidos no exame:</h2>
           <div className="flex flex-wrap mb-[1em]">
-            <div className="basis-1/2 my-4">
-              <CardVideo
-                title="Gedan Barai"
-                url="Gedan-barai"
-                time="15:51"
-                size="half"
-                isSelected={false}
-              ></CardVideo>
-            </div>
-            <div className="basis-1/2 my-4">
-              <CardVideo
-                title="Gedan Barai"
-                url="Gedan-barai"
-                time="15:51"
-                size="half"
-                isSelected={false}
-              ></CardVideo>
-            </div>
-            <div className="basis-1/2 my-4">
-              <CardVideo
-                title="Gedan Barai"
-                url="Gedan-barai"
-                time="15:51"
-                size="half"
-                isSelected={false}
-              ></CardVideo>
-            </div>
-            <div className="basis-1/2 my-4">
-              <CardVideo
-                title="Gedan Barai"
-                url="Gedan-barai"
-                time="15:51"
-                size="half"
-                isSelected={false}
-              ></CardVideo>
-            </div>
-            <div className="basis-1/2 my-4">
-              <CardVideo
-                title="Gedan Barai"
-                url="Gedan-barai"
-                time="15:51"
-                size="half"
-                isSelected={false}
-              ></CardVideo>
-            </div>
-            <div className="basis-1/2 my-4">
-              <CardVideo
-                title="Gedan Barai"
-                url="Gedan-barai"
-                time="15:51"
-                size="half"
-                isSelected={false}
-              ></CardVideo>
-            </div>
+            {golpes.map((golpe: Golpe) => (
+              <div className="basis-1/2 my-4" key={golpe.id}>
+                <CardVideo
+                  title={golpe.nome}
+                  url={golpe.urlPath}
+                  time={golpe.tempo}
+                  size="half"
+                  isSelected={false}
+                ></CardVideo>
+              </div>
+            ))}
           </div>
         </div>
         <div className="Kata my-10">
