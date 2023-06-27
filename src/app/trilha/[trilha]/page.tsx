@@ -3,6 +3,7 @@ import SideBar from "@/components/sideBar/sideBar";
 import CardVideo from "@/components/cardVideo/cardVideo";
 import Faixa from "@/types/Faixa";
 import Golpe from "@/types/Golpe";
+import Kata from "@/types/Kata";
 async function getFaixa(faixa: string) {
   const response = await fetch(
     `http://localhost:3000/faixas/findByFaixa/${faixa}`
@@ -17,9 +18,15 @@ async function getGolpes(faixa: string) {
   const golpes = await response.json();
   return golpes;
 }
+async function getKata(faixa: string) {
+  const response = await fetch(`http://localhost:3000/katas/${faixa}`);
+  const kata = await response.json();
+  return kata;
+}
 export default async function Trilha({ params }: any) {
   const faixa = (await getFaixa(params.trilha)) as Faixa;
   const golpes = (await getGolpes(faixa._id)) as Golpe[];
+  const kata = (await getKata(faixa._id)) as Kata;
   return (
     <div className="flex">
       <SideBar />
@@ -56,18 +63,13 @@ export default async function Trilha({ params }: any) {
               <iframe
                 width="100%"
                 height="315"
-                src={"https://www.youtube.com/embed/9D2yOzDsW8k"}
+                src={kata.url}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>
               <p className="text-[2.25em] text-[#868686] my-2">Descrição</p>
-              <span className="text-[1.25em]">
-                Jodan significa que será na cabeça, ou seja, o Jodan Age Uke
-                serve para defender um golpe vindo na direção da Cabeça. Outro
-                golpe semelhante a esses, que servem de defender com as mãos,
-                são: Gendan Barai, Soto Uke, Uchi Uke, entre outros.
-              </span>
+              <span className="text-[1.25em]">{kata.descricao}</span>
             </div>
             <CardVideo
               title="Heian Shodan"
