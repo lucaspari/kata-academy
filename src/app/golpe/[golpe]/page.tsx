@@ -1,27 +1,19 @@
 import React from "react";
 import SideBar from "@/components/sideBar/sideBar";
 import CardVideo from "@/components/cardVideo/cardVideo";
-import path from "path";
-import fsPromises from "fs/promises";
 import Golpe from "@/types/Golpe";
-async function getGolpes() {
-  const folder = path.join(process.cwd(), "src", "karate.json");
-  const jsonData = await fsPromises.readFile(folder);
-  const objectData = JSON.parse(jsonData.toString()) as any;
-  return objectData.golpes;
-}
-function prepareStringToFind(string: string) {
-  return (
-    string.charAt(0).toUpperCase() +
-    string.slice(1).toLowerCase().replace(" ", "-")
-  );
+import axios from "axios";
+async function getGolpe(urlPath: string) {
+  const nome = urlPath.charAt(0).toUpperCase() + urlPath.slice(1);
+  const golpe = await axios.get(`http://localhost:3000/golpes/${nome}`);
+
+  return golpe.data;
 }
 
 export default async function Golpe({ params }: any) {
-  const golpes = (await getGolpes()) as Golpe[];
-  const golpe = golpes.find(
-    (golpe: Golpe) => prepareStringToFind(golpe.nome) === params.golpe
-  );
+  const golpe = (await getGolpe(params.golpe)) as Golpe;
+  console.log("🚀 ~ file: page.tsx:10 ~ getGolpe ~ golpe:", golpe);
+
   if (golpe) {
     return (
       <div className="flex">
@@ -52,24 +44,17 @@ export default async function Golpe({ params }: any) {
             </div>
             <div className="vejaMais col-start-2 col-end-3 row-start-2 row-end-4 flex flex-col gap-4">
               <p className="text-4xl mb-4 ">Veja mais:</p>
-              <CardVideo
-                isSelected={false}
-                size="full"
-                title="Gedan Barai"
-                time="15:00"
-              ></CardVideo>
-              <CardVideo
-                isSelected={false}
-                size="full"
-                title="Soto Uke"
-                time="22:00"
-              ></CardVideo>
-              <CardVideo
-                isSelected={false}
-                size="full"
-                title="Uchi Uke"
-                time="30:00"
-              ></CardVideo>
+              {golpe.vejaMais.map(({ nome, urlPath }) => {
+                return (
+                  <CardVideo
+                    key={nome}
+                    isSelected={false}
+                    size="full"
+                    title={nome}
+                    url={urlPath}
+                  ></CardVideo>
+                );
+              })}
             </div>
             <div className="descricao row-start-2 row-end-3 text-3xl">
               <p className="text-4xl font-bold my-2">Descrição</p>

@@ -46,7 +46,7 @@ export default function SideBar() {
           </li>
           <li className="flex gap-2">
             <AiOutlineTrophy className="text-4xl" />
-            <Link href={"/trilha"}>
+            <Link href={"/faixas"}>
               <span className="text-3xl">Faixas</span>
             </Link>
           </li>

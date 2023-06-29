@@ -1,10 +1,14 @@
 export default interface Golpe {
-  id: number;
+  id: string;
   nome: string;
   tempo: string;
-  faixa: number;
+  urlPath: string;
   descricao: string;
   url: string;
-  urlPath: string;
   detalhes: string;
+  faixa: string;
+  vejaMais: {
+    urlPath: string;
+    nome: string;
+  }[]
 }

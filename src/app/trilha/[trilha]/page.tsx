@@ -4,25 +4,42 @@ import CardVideo from "@/components/cardVideo/cardVideo";
 import Faixa from "@/types/Faixa";
 import Golpe from "@/types/Golpe";
 import Kata from "@/types/Kata";
+import axios from "axios";
 async function getFaixa(faixa: string) {
-  const response = await fetch(
-    `http://localhost:3000/faixas/findByFaixa/${faixa}`
-  );
-  const faixas = await response.json();
-  return faixas;
+  try {
+    const nome = faixa.charAt(0).toUpperCase() + faixa.slice(1);
+    const response = await axios.get(
+      `http://localhost:3000/faixas/findByFaixa/${nome}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error in getFaixa:", error);
+    throw error;
+  }
 }
+
 async function getGolpes(faixa: string) {
-  const response = await fetch(
-    `http://localhost:3000/golpes/findGolpesByFaixa/${faixa}`
-  );
-  const golpes = await response.json();
-  return golpes;
+  try {
+    const response = await axios.get(
+      `http://localhost:3000/golpes/findGolpesByFaixa/${faixa}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error in getGolpes:", error);
+    throw error;
+  }
 }
+
 async function getKata(faixa: string) {
-  const response = await fetch(`http://localhost:3000/katas/${faixa}`);
-  const kata = await response.json();
-  return kata;
+  try {
+    const response = await axios.get(`http://localhost:3000/katas/${faixa}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error in getKata:", error);
+    throw error;
+  }
 }
+
 export default async function Trilha({ params }: any) {
   const faixa = (await getFaixa(params.trilha)) as Faixa;
   const golpes = (await getGolpes(faixa._id)) as Golpe[];
@@ -72,25 +89,9 @@ export default async function Trilha({ params }: any) {
               <span className="text-[1.25em]">{kata.descricao}</span>
             </div>
             <CardVideo
-              title="Heian Shodan"
-              time="15:51"
+              title={kata.nome}
               size="full"
-              isSelected={false}
-            ></CardVideo>
-          </div>
-        </div>
-        <div className="vejaMais">
-          <p className="text-[2.25em] mb-[1em] text-[#868686]">Veja Mais:</p>
-          <div className="videos flex gap-2 mb-12">
-            <CardVideo
-              title="Faixa Amarela"
-              size="full"
-              isSelected={false}
-            ></CardVideo>
-            <CardVideo
-              title="Faixa Vermelha"
-              size="full"
-              isSelected={false}
+              isSelected={true}
             ></CardVideo>
           </div>
         </div>
