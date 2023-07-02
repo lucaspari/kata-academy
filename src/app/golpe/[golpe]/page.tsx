@@ -5,7 +5,9 @@ import Golpe from "@/types/Golpe";
 import axios from "axios";
 async function getGolpe(urlPath: string) {
   const nome = urlPath.charAt(0).toUpperCase() + urlPath.slice(1);
-  const golpe = await axios.get(`http://localhost:3000/golpes/${nome}`);
+  const golpe = await axios.get(
+    `http://localhost:3000/golpes/findByGolpeUrlPath/${nome}`
+  );
 
   return golpe.data;
 }

@@ -14,7 +14,6 @@ async function getFaixa(faixa: string) {
     return response.data;
   } catch (error) {
     console.error("Error in getFaixa:", error);
-    throw error;
   }
 }
 
@@ -26,7 +25,6 @@ async function getGolpes(faixa: string) {
     return response.data;
   } catch (error) {
     console.error("Error in getGolpes:", error);
-    throw error;
   }
 }
 
@@ -36,7 +34,6 @@ async function getKata(faixa: string) {
     return response.data;
   } catch (error) {
     console.error("Error in getKata:", error);
-    throw error;
   }
 }
 
@@ -60,17 +57,18 @@ export default async function Trilha({ params }: any) {
         <div className="kihon">
           <h2 className="text-[2.25em] mb-[1em]">Golpes exigidos no exame:</h2>
           <div className="flex flex-wrap mb-[1em]">
-            {golpes.map((golpe: Golpe) => (
-              <div className="basis-1/2 my-4" key={golpe.id}>
-                <CardVideo
-                  title={golpe.nome}
-                  url={golpe.urlPath}
-                  time={golpe.tempo}
-                  size="half"
-                  isSelected={false}
-                ></CardVideo>
-              </div>
-            ))}
+            {golpes &&
+              golpes.map((golpe: Golpe) => (
+                <div className="basis-1/2 my-4" key={golpe.id}>
+                  <CardVideo
+                    title={golpe.nome}
+                    url={golpe.urlPath}
+                    time={golpe.tempo}
+                    size="half"
+                    isSelected={false}
+                  ></CardVideo>
+                </div>
+              ))}
           </div>
         </div>
         <div className="Kata my-10">
