@@ -5,42 +5,63 @@ import Faixa from "@/types/Faixa";
 import Golpe from "@/types/Golpe";
 import Kata from "@/types/Kata";
 import axios from "axios";
-async function getFaixa(faixa: string) {
+async function getFaixa(faixa: string): Promise<Faixa> {
   try {
-    const nome = faixa.charAt(0).toUpperCase() + faixa.slice(1);
-    const response = await axios.get(
-      `http://localhost:3000/faixas/findByFaixa/${nome}`
+    const response = await axios.get<Faixa[]>(
+      `http://127.0.0.1:8000/api/faixas?urlPath=${faixa}`
     );
-    return response.data;
+
+    if (response.data && response.data.length > 0) {
+      const data: Faixa = response.data[0];
+      return data;
+    } else {
+      throw new Error("No data found for the given 'faixa'.");
+    }
   } catch (error) {
-    console.error("Error in getFaixa:", error);
+    console.error("Error fetching data:", error);
+    throw error;
   }
 }
-
-async function getGolpes(faixa: string) {
+async function getKata(faixaId: string): Promise<Kata> {
   try {
-    const response = await axios.get(
-      `http://localhost:3000/golpes/findGolpesByFaixa/${faixa}`
+    const response = await axios.get<Kata[]>(
+      `http://127.0.0.1:8000/api/katas?faixaId=${faixaId}`
     );
-    return response.data;
+
+    if (response.data && response.data.length > 0) {
+      const data: Kata = response.data[0];
+      return data;
+    } else {
+      throw new Error("No data found for the given 'faixa'.");
+    }
   } catch (error) {
-    console.error("Error in getGolpes:", error);
+    console.error("Error fetching data:", error);
+    throw error;
   }
 }
-
-async function getKata(faixa: string) {
+async function getGolpes(faixaId: string): Promise<Golpe[]> {
   try {
-    const response = await axios.get(`http://localhost:3000/katas/${faixa}`);
-    return response.data;
+    const response = await axios.get<Golpe[]>(
+      `http://127.0.0.1:8000/api/golpes?faixaId=${faixaId}`
+    );
+
+    if (response.data && response.data.length > 0) {
+      const data: Golpe[] = response.data;
+      return data;
+    } else {
+      throw new Error("No data found for the given 'faixa'.");
+    }
   } catch (error) {
-    console.error("Error in getKata:", error);
+    console.error("Error fetching data:", error);
+    throw error;
   }
 }
-
 export default async function Trilha({ params }: any) {
-  const faixa = (await getFaixa(params.trilha)) as Faixa;
-  const golpes = (await getGolpes(faixa._id)) as Golpe[];
-  const kata = (await getKata(faixa._id)) as Kata;
+  const faixa = await getFaixa(params.trilha);
+  const [kata, golpes] = await Promise.all([
+    getKata(faixa.id),
+    getGolpes(faixa.id),
+  ]);
   return (
     <div className="flex">
       <SideBar />

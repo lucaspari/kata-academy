@@ -1,5 +1,5 @@
 export default interface Faixa {
-    _id: string;
+    id: string;
     nome: string;
     urlPath: string;
 }
