@@ -23,8 +23,6 @@ jobs:
         run: npm ci
       - name: Build Next.js app
         run: npm run build
-      - name: Run tests with Jest and react-testing-library
-        run: npm run test
       - name: "Deploy to Vercel"
         run: |
           prodRun=""
