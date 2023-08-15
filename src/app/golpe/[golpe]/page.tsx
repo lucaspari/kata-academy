@@ -5,17 +5,38 @@ import Golpe from "@/types/Golpe";
 import axios from "axios";
 async function getGolpe(urlPath: string) {
   const nome = urlPath.charAt(0).toUpperCase() + urlPath.slice(1);
-  const golpe = await axios.get(
-    `http://localhost:3000/golpes/findByGolpeUrlPath/${nome}`
-  );
-
-  return golpe.data;
+  try {
+    const golpe = await axios.get(
+      `http://localhost:8080/api/v1/golpes/?urlPath=${nome}`
+    );
+    if (golpe.status === 200) {
+      return golpe.data[0];
+    } else {
+      throw new Error(`Golpe not found with urlPath ${urlPath}`);
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 }
-
+async function getRandomGolpes() {
+  try {
+    const golpes = await axios.get(
+      `http://localhost:8080/api/v1/golpes/random`
+    );
+    if (golpes.status === 200) {
+      return golpes.data;
+    } else {
+      throw new Error(`An error occurred while fetching random golpes`);
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
 export default async function Golpe({ params }: any) {
   const golpe = (await getGolpe(params.golpe)) as Golpe;
-  console.log("🚀 ~ file: page.tsx:10 ~ getGolpe ~ golpe:", golpe);
-
+  const vejaMais = (await getRandomGolpes()) as Golpe[];
   if (golpe) {
     return (
       <div className="flex">
@@ -46,7 +67,7 @@ export default async function Golpe({ params }: any) {
             </div>
             <div className="vejaMais col-start-2 col-end-3 row-start-2 row-end-4 flex flex-col gap-4">
               <p className="text-4xl mb-4 ">Veja mais:</p>
-              {golpe.vejaMais.map(({ nome, urlPath }) => {
+              {vejaMais.map(({ nome, urlPath }) => {
                 return (
                   <CardVideo
                     key={nome}
