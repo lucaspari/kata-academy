@@ -1,28 +1,28 @@
-import React from "react";
 import SideBar from "@/components/sideBar/sideBar";
 import CardVideo from "@/components/cardVideo/cardVideo";
 import Golpe from "@/types/Golpe";
-import axios from "axios";
+import axios from 'axios';
+import { useRouter } from "next/router";
 async function getGolpe(urlPath: string) {
   const nome = urlPath.charAt(0).toUpperCase() + urlPath.slice(1);
   try {
     const golpe = await axios.get(
-      ` http://java-api:8080/api/v1/golpes/?urlPath=${nome}`
+      ` http://localhost:8080/api/v1/golpes/?urlPath=${nome}`
     );
     if (golpe.status === 200) {
       return golpe.data[0];
     } else {
-      throw new Error(`Golpe not found with urlPath ${urlPath}`);
+      console.log(Error(`Golpe not found with urlPath ${urlPath}`));
     }
   } catch (error) {
     console.error(error);
-    throw error;
+
   }
 }
 async function getRandomGolpes() {
   try {
     const golpes = await axios.get(
-      ` http://java-api:8080/api/v1/golpes/random`
+      ` http://localhost:8080/api/v1/golpes/random`
     );
     if (golpes.status === 200) {
       return golpes.data;
@@ -35,8 +35,12 @@ async function getRandomGolpes() {
   }
 }
 export default async function Golpe({ params }: any) {
-  const golpe = (await getGolpe(params.golpe)) as Golpe;
+  let golpe = (await getGolpe(params.golpe)) as Golpe;
   const vejaMais = (await getRandomGolpes()) as Golpe[];
+  if (golpe == null) {
+    golpe = vejaMais[0];
+  }
+
   if (golpe) {
     return (
       <div className="flex">

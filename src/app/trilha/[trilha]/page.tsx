@@ -8,7 +8,7 @@ import axios from "axios";
 async function getFaixa(faixa: string): Promise<Faixa> {
   try {
     const response = await axios.get<Faixa[]>(
-      ` http://java-api:8080/api/v1/faixas/?urlPath=${faixa}`
+      ` http://localhost:8080/api/v1/faixas/?urlPath=${faixa}`
     );
     if (response.data && response.data.length > 0) {
       const data: Faixa = response.data[0];
@@ -24,7 +24,7 @@ async function getFaixa(faixa: string): Promise<Faixa> {
 async function getKata(faixaId: string): Promise<Kata> {
   try {
     const response = await axios.get<Kata>(
-      ` http://java-api:8080/api/v1/katas/${faixaId}`
+      ` http://localhost:8080/api/v1/katas/${faixaId}`
     );
     if (response.data) {
       const data: Kata = response.data;
@@ -40,7 +40,7 @@ async function getKata(faixaId: string): Promise<Kata> {
 async function getGolpes(faixaId: string): Promise<Golpe[]> {
   try {
     const response = await axios.get<Golpe[]>(
-      ` http://java-api:8080/api/v1/golpes/${faixaId}`
+      ` http://localhost:8080/api/v1/golpes/${faixaId}`
     );
 
     if (response.data && response.data.length > 0) {
