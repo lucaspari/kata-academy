@@ -2,12 +2,11 @@ import SideBar from "@/components/sideBar/sideBar";
 import CardVideo from "@/components/cardVideo/cardVideo";
 import Golpe from "@/types/Golpe";
 import axios from 'axios';
-import { useRouter } from "next/router";
 async function getGolpe(urlPath: string) {
   const nome = urlPath.charAt(0).toUpperCase() + urlPath.slice(1);
   try {
     const golpe = await axios.get(
-      ` http://localhost:8080/api/v1/golpes/?urlPath=${nome}`
+      ` http://java-api:8080/api/v1/golpes/?urlPath=${nome}`
     );
     if (golpe.status === 200) {
       return golpe.data[0];
@@ -22,7 +21,7 @@ async function getGolpe(urlPath: string) {
 async function getRandomGolpes() {
   try {
     const golpes = await axios.get(
-      ` http://localhost:8080/api/v1/golpes/random`
+      ` http://java-api:8080/api/v1/golpes/random`
     );
     if (golpes.status === 200) {
       return golpes.data;
