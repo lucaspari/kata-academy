@@ -5,14 +5,10 @@ export default function Dashboard() {
   const session = useSession();
   return session ? (
     <div
-      className="flex
-    "
-    >
+      className="flex">
       <SideBar />
       <main className="half-screen mt-8">
-        <h1 className="text-5xl mb-10">Dashboard</h1>
-        <p className="text-4xl">User: {session?.data?.user?.name}</p>
-        <p className="text-4xl">Email: {session?.data?.user?.email}</p>
+        <h1 className="flex justify-center text-3xl">Insert a inspiring text here</h1>
       </main>
     </div>
   ) : (

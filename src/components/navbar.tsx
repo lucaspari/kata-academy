@@ -6,6 +6,7 @@ import Login from "./login";
 import Logo from "./logo/logo";
 import { UserIcon } from "./userIcon/userIcon";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Navbar() {
   const session = useSession();
@@ -14,9 +15,11 @@ export default function Navbar() {
       <nav className="max-w-screen-lg  mx-auto flex justify-between items-center mt-4">
         <Logo />
         <ul className={`${lato.className} flex gap-16`}>
-          {session.data && (
-            <UserIcon src={session.data.user?.image as string}></UserIcon>
-          )}
+          <Link href={'/profile'}>
+            {session.data && (
+              <UserIcon src={session.data.user?.image as string}></UserIcon>
+            )}
+          </Link>
           <li className="flex items-center">
             <ThemeChanger />
           </li>
