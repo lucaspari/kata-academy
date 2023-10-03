@@ -1,6 +1,8 @@
 "use client";
 import SideBar from "@/components/sideBar/sideBar";
+import Image from "next/image";
 import { useSession } from "next-auth/react";
+import chibi from "@/public/karate-chibi.jpg";
 export default function Dashboard() {
   const session = useSession();
   return session ? (
@@ -8,7 +10,15 @@ export default function Dashboard() {
       className="flex">
       <SideBar />
       <main className="half-screen mt-8">
-        <h1 className="flex justify-center text-3xl">Insert a inspiring text here</h1>
+        <div className="flex flex-col items-center">
+        <Image alt="chibi" width={400} className="rounded-lg m-2 p-2" src={chibi}></Image>
+        <h1 className="flex justify-center text-3xl m-2 p-2">
+          Obrigado por se juntar a nossa plataforma de karate,
+          aqui você ira aprender técnicas disseminadas pelo karatedô shotokan,
+          este sendo considerado um karate moderno
+          onde sua filosofia é baseada no respeito, disciplina e humildade.
+        </h1>
+        </div>
       </main>
     </div>
   ) : (

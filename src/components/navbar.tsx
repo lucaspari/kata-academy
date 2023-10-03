@@ -11,9 +11,11 @@ const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Navbar() {
   const session = useSession();
   return (
-    <div className="borderBottom">
-      <nav className="max-w-screen-lg  mx-auto flex justify-between items-center mt-4">
+    <div className="borderBottom flex">
+      <div className="mx-20 my-4">
         <Logo />
+      </div>
+      <nav className="max-w-screen-lg  mx-auto flex justify-between items-center mt-4">
         <ul className={`${lato.className} flex gap-16`}>
           <Link href={'/profile'}>
             {session.data && (
