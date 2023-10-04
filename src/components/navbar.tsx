@@ -10,14 +10,15 @@ import Link from "next/link";
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 export default function Navbar() {
   const session = useSession();
-  return (
+
+  return session.status === "authenticated" ? (
     <div className="borderBottom flex">
       <div className="mx-20 my-4">
         <Logo />
       </div>
       <nav className="max-w-screen-lg  mx-auto flex justify-between items-center mt-4">
         <ul className={`${lato.className} flex gap-16`}>
-          <Link href={'/profile'}>
+          <Link href={"/profile"}>
             {session.data && (
               <UserIcon src={session.data.user?.image as string}></UserIcon>
             )}
@@ -30,6 +31,25 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
+      <div className="bar mt-4 dark:bg-[#030713]"></div>
+    </div>
+  ) : (
+    <div>
+      <div className=" max-w-screen-lg mx-auto flex justify-between items-center ">
+        <div className="mx-20 my-4 ">
+          <Logo />
+        </div>
+        <nav>
+          <ul className="flex">
+            <li className="mx-4 self-center">
+              <ThemeChanger />
+            </li>
+            <li className="mx-4">
+              <Login />
+            </li>
+          </ul>
+        </nav>
+      </div>
       <div className="bar mt-4 dark:bg-[#030713]"></div>
     </div>
   );
