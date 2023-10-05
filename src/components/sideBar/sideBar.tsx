@@ -46,10 +46,6 @@ export default function SideBar() {
       <nav className="text-3xl">
         <ul className="mx-20 flex flex-col gap-8">
           <li className="flex gap-2">
-            <CiMap className="text-4xl" />
-            <span className="text-3xl">Roadmap</span>
-          </li>
-          <li className="flex gap-2">
             <AiOutlineTrophy className="text-4xl" />
             <Link href={"/faixas"}>
               <span className="text-3xl">Faixas</span>
