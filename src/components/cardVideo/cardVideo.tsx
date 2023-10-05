@@ -13,7 +13,7 @@ interface CardVideo {
 export default function cardVideo(props: CardVideo) {
   if (typeof props.url !== "undefined") {
     return (
-      <Link href={`/golpe/${props.url}`}>
+      <Link className="flex justify-center" href={`/golpe/${props.url}`}>
         <button
           className={
             "rounded-2xl px-28 py-1 flex items-center gap-4 " +

@@ -67,7 +67,7 @@ export default function SideBar() {
           </button>
           <li className="flex gap-2">
             <GiPunch className="text-4xl" />
-            <Link href={"/golpe"}>
+            <Link href={"/golpes"}>
               <span className="text-3xl">Golpes</span>
             </Link>
           </li>
