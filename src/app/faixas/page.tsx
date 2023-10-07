@@ -27,6 +27,27 @@ export default function Faixa() {
               faixa="8 Kyu"
             />
           </Link>
+          <Link href={"/trilha/Faixa-vermelha"}>
+            <Polygon
+              color="red"
+              className="text-[#FF3333] text-lg"
+              faixa="7 Kyu"
+            />
+          </Link>
+          <Link href={"/trilha/Faixa-laranja"}>
+            <Polygon
+              color="orange"
+              className="text-[#F0751A] text-lg"
+              faixa="6 Kyu"
+            />
+          </Link>
+          <Link href={"/trilha/Faixa-verde"}>
+            <Polygon
+              color="green"
+              className="text-[#19ED0B] text-lg"
+              faixa="5 Kyu"
+            />
+          </Link>
         </div>
       </main>
     </div>
