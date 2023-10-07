@@ -3,7 +3,14 @@ import SideBar from "@/components/sideBar/sideBar";
 import { Polygon } from "@/components/polygon/polygon";
 import { Lato } from "next/font/google";
 import Link from "next/link";
+import CardFaixa from "@/components/cardFaixa/cardFaixa";
 const lato = Lato({ subsets: ["latin"], weight: "400" });
+import branca from "@/public/branca.svg";
+import amarelo from "@/public/amarelo.svg";
+import laranja from "@/public/laranja.svg";
+import verde from "@/public/verde.svg";
+import roxo from "@/public/roxo.svg";
+import vermelha from "@/public/vermelha.svg";
 export default function Faixa() {
   return (
     <div className="flex">
@@ -12,42 +19,43 @@ export default function Faixa() {
         <h1 className={"text-5xl text-center mb-9 " + lato.className}>
           Escolha seu Caminho
         </h1>
-        <div className="flex gap-10 justify-center">
-          <Link href={"/trilha/Faixa-branca"}>
-            <Polygon
-              color="white"
-              className="text-[#fff] text-lg"
-              faixa="9 Kyu"
-            />
-          </Link>
-          <Link href={"/trilha/Faixa-amarela"}>
-            <Polygon
-              color="yellow"
-              className="text-[#ffff1a] text-lg"
-              faixa="8 Kyu"
-            />
-          </Link>
-          <Link href={"/trilha/Faixa-vermelha"}>
-            <Polygon
-              color="red"
-              className="text-[#FF3333] text-lg"
-              faixa="7 Kyu"
-            />
-          </Link>
-          <Link href={"/trilha/Faixa-laranja"}>
-            <Polygon
-              color="orange"
-              className="text-[#F0751A] text-lg"
-              faixa="6 Kyu"
-            />
-          </Link>
-          <Link href={"/trilha/Faixa-verde"}>
-            <Polygon
-              color="green"
-              className="text-[#19ED0B] text-lg"
-              faixa="5 Kyu"
-            />
-          </Link>
+        <div className="flex flex-wrap gap-10 justify-center">
+          <CardFaixa
+            title="9º Kyu"
+            subtitle="Faixa Branca"
+            href="/trilha/Faixa-branca"
+            image={branca}
+          />
+          <CardFaixa
+            title="8º Kyu"
+            subtitle="Faixa Amarela"
+            href="/trilha/Faixa-amarela"
+            image={amarelo}
+          />
+          <CardFaixa
+            title="7º Kyu"
+            subtitle="Faixa vermelha"
+            href="/trilha/Faixa-vermelha"
+            image={vermelha}
+          />
+          <CardFaixa
+            title="6º Kyu"
+            subtitle="Faixa Laranja"
+            href="/trilha/Faixa-laranja"
+            image={laranja}
+          />
+          <CardFaixa
+            title="5º Kyu"
+            subtitle="Faixa Verde"
+            href="/trilha/Faixa-verde"
+            image={verde}
+          />
+          <CardFaixa
+            title="4º Kyu"
+            subtitle="Faixa Roxa"
+            href="/trilha/Faixa-roxa"
+            image={roxo}
+          />
         </div>
       </main>
     </div>
