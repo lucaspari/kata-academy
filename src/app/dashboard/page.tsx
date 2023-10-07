@@ -9,20 +9,21 @@ export default function Dashboard() {
   return session ? (
     <div className="flex">
       <SideBar />
-      <main className="half-screen mt-8">
-        <div className="flex flex-col items-center">
+      <main className="max-w-screen-md mt-8">
+        <div className="flex items-center">
+          <div>
+            <h1 className="text-[40px] px-4 py-4 font-bold">Bem vindo!</h1>
+            <p className="text-[20px] px-4 py-4 ">
+              Obrigado por se juntar a nossa plataforma de karate, aqui você irá
+              aprender técnicas disseminadas pelo karatedô shotokan.
+            </p>
+          </div>
           <Image
             alt="chibi"
             width={400}
             className="rounded-[4.5rem] m-2 p-2"
             src={chibi}
           ></Image>
-          <h1 className="flex justify-center text-3xl m-2 p-2 text-align-last-center">
-            Obrigado por se juntar a nossa plataforma de karate, aqui você ira
-            aprender técnicas disseminadas pelo karatedô shotokan, este sendo
-            considerado um karate moderno onde sua filosofia é baseada no
-            respeito, disciplina e humildade.
-          </h1>
         </div>
       </main>
     </div>
