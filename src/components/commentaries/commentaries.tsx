@@ -20,11 +20,11 @@ export default function Commentaries() {
         <div className="grid grid-cols-3 gap-10 mt-20">
           <div className="lg:row-start-1 lg:row-end-4 lg:col-start-1 lg:col-end-1 col-start-1 col-end-4">
             <CardReview
-              name="Eddard Stark"
+              name="Timotte Chalamet"
               alt="Eddard Stark"
               src={Timotte}
               commentary="“Através da plataforma consegui complementar meus treinos de karatê, em casa”"
-              memberSince="Aluno há 7 meses"
+              memberSince="Aluno há 3 meses"
             ></CardReview>
           </div>
           <div className="lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-2 col-start-1 col-end-4">
@@ -33,16 +33,16 @@ export default function Commentaries() {
               alt="Eddard Stark"
               src={Geraldo}
               commentary="“Estou aprendendo muito e aprimorando minhas habilidades”"
-              memberSince="Aluno há 3 meses"
+              memberSince="Aluno há 7 meses"
             ></CardReview>
           </div>
           <div className="lg:row-start-1 lg:row-end-4 lg:col-start-3 lg:col-end-4 col-start-1 col-end-4">
             <CardReview
-              name="Eddard Stark"
+              name="Stella Fernandes"
               alt="Eddard Stark"
               src={Jane}
               commentary="“Me ajudou bastante a aprender as técnicas da faixa amarela para passar no exame”"
-              memberSince="Aluno há 1 ano"
+              memberSince="Aluno há 10 meses"
             ></CardReview>
           </div>
         </div>
