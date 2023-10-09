@@ -73,7 +73,7 @@ export const Middle = () => {
               <div>
                 <div className="tempo flex gap-2 font-bold text-[16px] opacity-60">
                   <BiTimeFive className="self-center" />
-                  <span>2 Minutos</span>
+                  <span>02:24</span>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ export const Middle = () => {
               <div>
                 <div className="tempo flex gap-2 font-bold text-[16px] opacity-60">
                   <BiTimeFive className="self-center" />
-                  <span>2 Minutos</span>
+                  <span>02:35</span>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export const Middle = () => {
               <div>
                 <div className="tempo flex gap-2 font-bold text-[16px] opacity-60">
                   <BiTimeFive className="self-center" />
-                  <span>2 Minutos</span>
+                  <span>02:42</span>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export const Middle = () => {
               <div>
                 <div className="tempo flex gap-2 font-bold text-[16px] opacity-60">
                   <BiTimeFive className="self-center" />
-                  <span>2 Minutos</span>
+                  <span>02:54</span>
                 </div>
               </div>
             </div>
@@ -141,7 +141,7 @@ export const Middle = () => {
               <div>
                 <div className="tempo flex gap-2 font-bold text-[16px] opacity-60">
                   <BiTimeFive className="self-center" />
-                  <span>2 Minutos</span>
+                  <span>02:51</span>
                 </div>
               </div>
             </div>

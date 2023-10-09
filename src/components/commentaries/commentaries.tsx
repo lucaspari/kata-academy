@@ -32,14 +32,14 @@ export default function Commentaries() {
               name="Eddard Stark"
               alt="Eddard Stark"
               src={Geraldo}
-              commentary="“Estou aprendendo muito e aprimorando minhas habilidades”"
+              commentary="“Estou aprendendo muito e aprimorando minhas habilidades com essa plataforma”"
               memberSince="Aluno há 7 meses"
             ></CardReview>
           </div>
           <div className="lg:row-start-1 lg:row-end-4 lg:col-start-3 lg:col-end-4 col-start-1 col-end-4">
             <CardReview
               name="Stella Fernandes"
-              alt="Eddard Stark"
+              alt="Stella Fernandes"
               src={Jane}
               commentary="“Me ajudou bastante a aprender as técnicas da faixa amarela para passar no exame”"
               memberSince="Aluno há 10 meses"
