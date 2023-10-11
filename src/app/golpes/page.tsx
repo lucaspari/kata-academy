@@ -25,6 +25,7 @@ export default function Golpes() {
     const indexOfLastGolpe = currentPage * golpesPerPage;
     const indexOfFirstGolpe = indexOfLastGolpe - golpesPerPage;
     const currentGolpes = golpesFiltrados.slice(indexOfFirstGolpe, indexOfLastGolpe);
+    const paginate = (number : number) => setCurrentPage(number)
     const handleChange = (value: string) => {
         const filteredGolpes = golpes.filter((golpe: Golpe) =>
             golpe.nome.includes(value),
@@ -61,7 +62,7 @@ export default function Golpes() {
                             </div>
                         ))}
                 </div>
-                <Pagination golpesPerPage={golpesPerPage} totalGolpes={golpesFiltrados.length}></Pagination>
+                <Pagination paginate={paginate} golpesPerPage={golpesPerPage} totalGolpes={golpesFiltrados.length}></Pagination>
             </main>
         </div>
     );

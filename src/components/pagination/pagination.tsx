@@ -3,10 +3,10 @@ import React from "react";
 interface PaginationProps {
     golpesPerPage: number;
     totalGolpes: number;
-    paginate : void;
+    paginate: (number: number) => void;
 }
 
-export default function Pagination({golpesPerPage, totalGolpes}: PaginationProps) {
+export default function Pagination({golpesPerPage, totalGolpes, paginate}: PaginationProps) {
     const pageNumbers = []
     for (let i = 1; i <= Math.ceil(totalGolpes / golpesPerPage); i++) {
         pageNumbers.push(i)
@@ -19,8 +19,8 @@ export default function Pagination({golpesPerPage, totalGolpes}: PaginationProps
                 {pageNumbers.map((number) => (
                         <li key={number}>
                             <li>
-                                <button
-                                    className="flex items-center
+                                <button onClick={() => paginate(number)}
+                                        className="flex items-center
                                     justify-center px-4 h-10 leading-tight
                                      text-gray-500 bg-white border border-gray-300
                                       hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800
