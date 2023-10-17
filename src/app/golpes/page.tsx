@@ -9,12 +9,16 @@ import Pagination from "@/components/pagination/pagination";
 const fetchAllGolpes = async () => {
     const response = await axios.get("https://karate-api-application-95797bd1cc3f.herokuapp.com/api/v1/golpes/");
     return (await response.data) as Golpe[];
+    const golpes = await axios.get(
+        `http://java-api.127.0.0.1.nip.io:8080/api/v1/golpes/`
+    );
+    if(golpes.status === 200) return golpes.data
 };
 export default function Golpes() {
     const [golpes, setGolpes] = React.useState<Golpe[]>([]);
     const [golpesFiltrados, setGolpesFiltrados] = React.useState<Golpe[]>([]);
     const [currentPage, setCurrentPage] = React.useState(1)
-    const [golpesPerPage, setGolpesPerPage] = React.useState(5)
+    const [golpesPerPage, setGolpesPerPage] = React.useState(6)
     React.useEffect(() => {
         fetchAllGolpes().then((golpes) => {
             setGolpes(golpes);

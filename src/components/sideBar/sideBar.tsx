@@ -12,18 +12,28 @@ import axios from "axios";
 import Golpe from "@/types/Golpe";
 const lato = Lato({ subsets: ["latin"], weight: ["300", "400", "700"] });
 import { useRouter } from "next/navigation";
-async function getRandomGolpes() {
-  try {
-    const response = await axios.get(
-      `http://localhost:3000/golpes/randomGolpe`
-    );
-    const golpe = response.data as Golpe;
-    return golpe.urlPath;
-  } catch (error) {
-    console.error("Error in getGolpes:", error);
-  }
-}
+
 export default function SideBar() {
+    async function getRandomGolpes() {
+        try {
+            const golpes = await axios.get(
+                `https://karate-api-application-95797bd1cc3f.herokuapp.com/api/v1/golpes/random`
+            );
+
+            if (golpes.status === 200) {
+                return golpes.data;
+            } else {
+                throw new Error(`An error occurred while fetching random golpes`);
+            }
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+  const handleTreinoRapido = async () => {
+    const golpes = await getRandomGolpes();
+    router.push(`golpe/${golpes[0].urlPath}`);
+  }
   const router = useRouter();
   return (
     <div className={"relative h-screen borderRight " + lato.className}>
@@ -52,9 +62,8 @@ export default function SideBar() {
             </Link>
           </li>
           <button
-            onClick={async () =>
-              router.push(`/golpe/${await getRandomGolpes()}`)
-            }
+
+              onClick={() => {handleTreinoRapido()}}
           >
             <li className="flex gap-2">
               <AiOutlineThunderbolt className="text-4xl" />

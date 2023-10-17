@@ -3,6 +3,7 @@ import { BiTimeFive } from "react-icons/bi";
 import KarateMini from "@/public/miniKarate.svg";
 import Image from "next/image";
 import Link from "next/link";
+import "./index.css";
 interface CardVideo {
   title: string;
   time?: string;
@@ -23,7 +24,12 @@ export default function cardVideo(props: CardVideo) {
         >
           <Image src={KarateMini} alt="karateMini"></Image>
           <div>
-            <span className="font-semibold text-3xl">{props.title}</span>
+            <span
+              title={props.title}
+              className="font-semibold text-3xl clamp-2"
+            >
+              {props.title}
+            </span>
             <div>
               {props.time && (
                 <div className="tempo flex gap-2 font-bold text-[16px] opacity-60">
@@ -49,7 +55,12 @@ export default function cardVideo(props: CardVideo) {
         >
           <Image src={KarateMini} alt="karateMini"></Image>
           <div>
-            <span className="font-semibold text-3xl">{props.title}</span>
+            <span
+              title={props.title}
+              className="font-semibold text-3xl clamp-2"
+            >
+              {props.title}
+            </span>
             <div>
               {props.time && (
                 <div className="tempo flex gap-2 font-bold text-[16px] opacity-60">
