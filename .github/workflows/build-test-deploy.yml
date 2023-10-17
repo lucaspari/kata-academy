@@ -9,8 +9,6 @@ jobs:
     env:
       NEXT_GOOGLE_CLIENT_ID: ${{ secrets.NEXT_GOOGLE_CLIENT_ID }}
       NEXT_GOOGLE_CLIENT_SECRET: ${{ secrets.NEXT_GOOGLE_CLIENT_SECRET }}
-      NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-      NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
       NEXT_VERCEL_TOKEN: ${{ secrets.NEXT_VERCEL_TOKEN }}
     steps:
       - name: Checkout code
