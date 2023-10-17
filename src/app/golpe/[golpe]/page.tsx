@@ -6,7 +6,7 @@ async function getGolpe(urlPath: string) {
   const nome = urlPath.charAt(0).toUpperCase() + urlPath.slice(1);
   try {
     const golpe = await axios.get(
-      ` http://java-api:8080/api/v1/golpes/?urlPath=${nome}`
+      ` https://karate-api-application-95797bd1cc3f.herokuapp.com/api/v1/golpes/?urlPath=${nome}`
     );
     if (golpe.status === 200) {
       return golpe.data[0];
@@ -21,7 +21,7 @@ async function getGolpe(urlPath: string) {
 async function getRandomGolpes() {
   try {
     const golpes = await axios.get(
-      ` http://java-api:8080/api/v1/golpes/random`
+      ` https://karate-api-application-95797bd1cc3f.herokuapp.com/api/v1/golpes/random`
     );
     if (golpes.status === 200) {
       return golpes.data;

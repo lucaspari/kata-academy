@@ -7,7 +7,7 @@ import axios from "axios";
 import Pagination from "@/components/pagination/pagination";
 
 const fetchAllGolpes = async () => {
-    const response = await axios.get("http://localhost:8080/api/v1/golpes/");
+    const response = await axios.get("https://karate-api-application-95797bd1cc3f.herokuapp.com/api/v1/golpes/");
     return (await response.data) as Golpe[];
 };
 export default function Golpes() {
