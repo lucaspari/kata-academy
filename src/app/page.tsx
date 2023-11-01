@@ -1,12 +1,10 @@
 "use client";
 import Image from "next/image";
 import karate_people from "@/public/karate-people.svg";
-import { Inter } from "next/font/google";
-import { Lato } from "next/font/google";
+import { Inter, Lato } from "next/font/google";
 import { Middle } from "@/components/middleSection/middle";
-import Link from "next/link";
+import { signIn, useSession } from "next-auth/react";
 import Commentaries from "@/components/commentaries/commentaries";
-import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 const inter = Inter({ subsets: ["latin"], weight: "600" });
 const lato = Lato({ subsets: ["latin"], weight: "400" });
@@ -31,12 +29,12 @@ export default function Home() {
               <p>Aqui, você poderá praticar de forma segura e</p>
               <p>conveniente, tudo isso sem sair de casa.</p>
             </div>
-            <Link
-              href={"/golpe"}
+            <button
+              onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
               className="border border-solid border-black dark:border-white text-[16px] lg:w-1/3 h-20 lg:text-[2em] flex justify-center items-center"
             >
               <span className="text-center">Aprenda Mais</span>
-            </Link>
+            </button>
           </div>
           <div className="hidden lg:inline-block">
             <Image
