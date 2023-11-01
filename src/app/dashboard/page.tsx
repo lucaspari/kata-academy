@@ -12,7 +12,7 @@ export default function Dashboard() {
       <main className="max-w-screen-md mt-8">
         <div className="flex items-center">
           <div>
-            <h1 className="text-[40px] px-4 py-4 font-bold">Bem vindo!</h1>
+            <h1 className="text-[40px] px-4 py-4 font-bold">Bem-vindo!</h1>
             <p className="text-[20px] px-4 py-4 ">
               Obrigado por se juntar a nossa plataforma de karate, aqui você irá
               aprender técnicas disseminadas pelo karatedô shotokan.
