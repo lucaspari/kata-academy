@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="mx-20 my-4">
         <Logo />
       </div>
-      <nav className="max-w-screen-lg  mx-auto flex justify-between items-center mt-4">
+      <nav className="mx-auto flex justify-between items-center mt-4">
         <ul className={`${lato.className} flex gap-16`}>
           <Link href={"/profile"}>
             {session.data && (
