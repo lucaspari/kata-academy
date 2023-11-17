@@ -44,7 +44,7 @@ export default async function Golpe({ params }: any) {
     return (
       <div className="flex">
         <SideBar />
-        <main className="flex-grow max-w-screen-lg mx-8">
+        <main className="flex-grow mx-8">
           <div className="title my-4  py-4">
             <h1 className="text-5xl">{golpe.nome}</h1>
           </div>

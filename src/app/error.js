@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <div className="flex">
       <SideBar />
-      <main className="flex-grow max-w-screen-lg mx-8">
+      <main className="flex-grow mx-8">
         <div className="w-1/2 flex flex-col items-center gap-8">
           <div className="text-5xl text-center my-4">
             Infelizmente essa página não pode ser carregada, por gentileza.

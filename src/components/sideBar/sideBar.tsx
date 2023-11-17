@@ -67,7 +67,7 @@ export default function SideBar() {
           >
             <li className="flex gap-2">
               <AiOutlineThunderbolt className="text-4xl" />
-              <span className="text-3xl">Treino rápido</span>
+              <span className="text-3xl whitespace-nowrap">Treino rápido</span>
             </li>
           </button>
           <li className="flex gap-2">

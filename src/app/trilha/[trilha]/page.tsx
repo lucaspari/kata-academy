@@ -64,7 +64,7 @@ export default async function Trilha({ params }: any) {
   return (
     <div className="flex">
       <SideBar />
-      <main className="flex-grow max-w-screen-lg mx-8">
+      <main className="flex-grow mx-8">
         <div className="mb-[5.5em] mt-[3.93em]">
           <h1 className="text-[3em]">Trilha de aprendizagem</h1>
           <span

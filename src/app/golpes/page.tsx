@@ -41,7 +41,7 @@ export default function Golpes() {
     return (
         <div className="flex">
             <SideBar/>
-            <main className="flex-grow max-w-screen-lg mx-8">
+            <main className="flex-grow mx-8">
                 <div className="flex justify-center relative">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"></div>
                     <input
