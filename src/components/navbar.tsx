@@ -12,11 +12,11 @@ export default function Navbar() {
   const session = useSession();
 
   return session.status === "authenticated" ? (
-    <div className="borderBottom flex">
+    <div className="borderBottom flex justify-between">
       <div className="mx-20 my-4">
         <Logo />
       </div>
-      <nav className="mx-auto flex justify-between items-center mt-4">
+      <nav className=" flex justify-between items-center  mr-8">
         <ul className={`${lato.className} flex gap-16`}>
           <Link href={"/profile"}>
             {session.data && (
@@ -31,7 +31,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-      <div className="bar mt-4 dark:bg-[#030713]"></div>
     </div>
   ) : (
     <div>

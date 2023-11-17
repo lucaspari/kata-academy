@@ -31,8 +31,10 @@ export default function Golpes() {
     const currentGolpes = golpesFiltrados.slice(indexOfFirstGolpe, indexOfLastGolpe);
     const paginate = (number : number) => setCurrentPage(number)
     const handleChange = (value: string) => {
+        console.log(value.toLowerCase())
+        console.log(golpes)
         const filteredGolpes = golpes.filter((golpe: Golpe) =>
-            golpe.nome.includes(value),
+            golpe.nome.toLowerCase().includes(value.toLowerCase()),
         );
         setGolpesFiltrados(filteredGolpes);
     };
