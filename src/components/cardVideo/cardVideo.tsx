@@ -14,8 +14,9 @@ interface CardVideo {
 export default function cardVideo(props: CardVideo) {
   if (typeof props.url !== "undefined") {
     return (
-      <Link className="flex justify-center" href={`/golpe/${props.url}`}>
-        <button
+      <div className="flex justify-center" >
+        <Link
+        href={`/golpe/${props.url}`}
           className={
             "rounded-2xl px-28 py-1 flex items-center gap-4 " +
             (props.size === "full" ? "w-full " : "w-1/2 ") +
@@ -39,8 +40,8 @@ export default function cardVideo(props: CardVideo) {
               )}
             </div>
           </div>
-        </button>
-      </Link>
+        </Link>
+      </div>
     );
   } else {
     return (
